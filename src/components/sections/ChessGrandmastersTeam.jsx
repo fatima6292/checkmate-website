@@ -31,17 +31,17 @@ const ChessGrandmastersTeam = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Alex King",
+      name: "Abdul Aziz",
       role: "CEO & Founder",
       piece: "♔", // King
       color: "#E5A244", // Gold
-      description: "Alex leads our team with vision and strategy. With over 15 years of software development experience, he specializes in architecting scalable solutions and driving innovation. His passion for chess inspired our company's strategic approach to problem-solving.",
+      description: "Abdul leads our team with vision and strategy. With over 15 years of software development experience, he specializes in architecting scalable solutions and driving innovation. His passion for chess inspired our company's strategic approach to problem-solving.",
       expertise: ["System Architecture", "Strategic Planning", "Team Leadership"],
-      image: "/images/team/alex-king.jpg",
+      image: "/images/team/abdulaziz.jpeg",
       social: {
-        linkedin: "https://linkedin.com/in/alexking",
-        twitter: "https://twitter.com/alexking",
-        github: "https://github.com/alexking"
+        linkedin: "https://linkedin.com/in/connect2abdulaziz",
+        twitter: "https://twitter.com/connect2aziz",
+        github: "https://github.com/connect2abdulaziz"
       }
     },
     {
@@ -618,6 +618,7 @@ const ChessGrandmastersTeam = () => {
                   zIndex: 1,
                 }}>
                   {/* Profile Image */}
+                  {/* Profile Image */}
                   <motion.div
                     variants={profileImageVariants}
                     style={{
@@ -628,19 +629,39 @@ const ChessGrandmastersTeam = () => {
                       overflow: 'hidden',
                       border: `3px solid ${teamMembers[activeTeamMember].color}`,
                       boxShadow: `0 10px 20px rgba(0, 0, 0, 0.2), 0 0 10px ${teamMembers[activeTeamMember].color}40`,
+                      position: 'relative',
                     }}
                   >
-                    {/* This would be a real image in production */}
+                    {/* Real image */}
+                    <img
+                      src={teamMembers[activeTeamMember].image}
+                      alt={teamMembers[activeTeamMember].name}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                      }}
+                      onError={(e) => {
+                        // Fallback if image fails to load
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+
+                    {/* Fallback if image is not available */}
                     <div style={{
                       width: '100%',
                       height: '100%',
                       backgroundColor: `${teamMembers[activeTeamMember].color}20`,
-                      display: 'flex',
+                      display: 'none',
                       alignItems: 'center',
                       justifyContent: 'center',
                       color: teamMembers[activeTeamMember].color,
                       fontSize: '3rem',
                       fontWeight: 'bold',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
                     }}>
                       {teamMembers[activeTeamMember].name.charAt(0)}
                     </div>
