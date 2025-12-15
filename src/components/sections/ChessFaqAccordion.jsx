@@ -236,6 +236,7 @@ const ChessFaqAccordion = () => {
               padding: '0.5rem 1rem',
               background: 'rgba(229, 162, 68, 0.1)',
               borderRadius: '50px',
+              fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
             }}
           >
             Knowledge Base
@@ -250,6 +251,7 @@ const ChessFaqAccordion = () => {
               fontWeight: 'bold',
               marginBottom: '1.5rem',
               color: '#fff',
+              fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
             }}
           >
             Frequently Asked Questions
@@ -265,6 +267,7 @@ const ChessFaqAccordion = () => {
               margin: '0 auto',
               color: '#aaa',
               lineHeight: 1.6,
+              fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
             }}
           >
             Common questions about our services and processes. 

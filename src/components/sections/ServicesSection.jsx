@@ -9,7 +9,7 @@ const ServicesSection = () => {
     const iconStyle = {
       width: size,
       height: size,
-      color: 'var(--color-primary)',
+      color: 'var(--color-secondary)',
     };
 
     switch (iconType) {
@@ -150,39 +150,40 @@ const ServicesSection = () => {
   
   return (
     <>
-      <section 
-        className="services-section"
-        style={{
-          position: 'relative',
-          padding: '100px 0',
-          backgroundColor: 'var(--background)',
-          overflow: 'hidden',
-        }}
-      >
-        
-        <div className="container" style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          padding: '0 2rem',
-          position: 'relative',
-          zIndex: 1,
+    <section 
+      className="services-section"
+      style={{
+        position: 'relative',
+        padding: '100px 0',
+        backgroundColor: '#ffffff',
+        overflow: 'hidden',
+        marginTop: '-1px',
+      }}
+    >
+      
+      <div className="container" style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 2rem',
+        position: 'relative',
+        zIndex: 1,
+      }}>
+        <div className="section-header" style={{
+          textAlign: 'center',
+          marginBottom: '3rem',
         }}>
-          <div className="section-header" style={{
-            textAlign: 'center',
-            marginBottom: '3rem',
-          }}>
             <h6 className="section-label">
-              Our Services
-            </h6>
+            Our Services
+          </h6>
             <h2 className="section-title">
-              Professional Packaged Services
-            </h2>
+            Professional Packaged Services
+          </h2>
             <p className="section-description">
-              Secure Development & Cloud Ops, powered by expert engineers. 
-              From full-stack applications to cloud infrastructure, we deliver scalable solutions.
-            </p>
-          </div>
-          
+            Secure Development & Cloud Ops, powered by expert engineers. 
+            From full-stack applications to cloud infrastructure, we deliver scalable solutions.
+          </p>
+        </div>
+        
           <div className="services-grid">
           {services.map((service) => (
             <div
@@ -270,10 +271,11 @@ const ServicesSection = () => {
         .section-label {
           font-size: 1rem;
           font-weight: bold;
-          color: var(--color-primary);
+          color: var(--color-secondary);
           text-transform: uppercase;
           margin-bottom: 1rem;
           letter-spacing: 2px;
+          font-family: var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif;
         }
 
         .section-title {
@@ -290,6 +292,7 @@ const ServicesSection = () => {
           margin: 0 auto;
           color: var(--text-on-light-muted);
           line-height: 1.6;
+          font-family: var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif;
         }
 
         .services-grid {
@@ -311,7 +314,7 @@ const ServicesSection = () => {
 
         .service-icon {
           margin-bottom: 1.5rem;
-          color: var(--color-primary);
+          color: var(--color-secondary);
           position: relative;
           display: flex;
           align-items: center;
@@ -325,7 +328,7 @@ const ServicesSection = () => {
           width: 80px;
           height: 80px;
           border-radius: 50%;
-          background: var(--color-primary-light);
+          background: var(--color-secondary-light);
           z-index: 0;
         }
 
@@ -342,6 +345,7 @@ const ServicesSection = () => {
           color: var(--text-on-light-muted);
           margin-bottom: 1.5rem;
           line-height: 1.6;
+          font-family: var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif;
         }
 
         .service-features {
@@ -356,6 +360,7 @@ const ServicesSection = () => {
           margin-bottom: 0.8rem;
           font-size: 0.95rem;
           color: var(--text-on-light-muted);
+          font-family: var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif;
         }
 
         .feature-dot {
@@ -363,7 +368,7 @@ const ServicesSection = () => {
           width: 6px;
           height: 6px;
           border-radius: 50%;
-          background-color: var(--color-primary);
+          background-color: var(--color-secondary);
           margin-right: 10px;
           flex-shrink: 0;
         }
@@ -372,11 +377,12 @@ const ServicesSection = () => {
           display: inline-flex;
           align-items: center;
           margin-top: 1.5rem;
-          color: var(--color-primary);
+          color: var(--color-secondary);
           font-weight: bold;
           font-size: 0.95rem;
           text-decoration: none;
           transition: transform 0.2s ease;
+          font-family: var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif;
         }
 
         @media (max-width: 768px) {

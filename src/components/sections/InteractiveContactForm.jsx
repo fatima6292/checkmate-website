@@ -377,6 +377,7 @@ const InteractiveContactForm = () => {
               padding: '0.5rem 1rem',
               background: 'rgba(80, 172, 142, 0.1)',
               borderRadius: '50px',
+              fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
             }}
           >
             Make Your Move
@@ -394,6 +395,7 @@ const InteractiveContactForm = () => {
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
+              fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
             }}
           >
             Strategic Collaboration
@@ -409,6 +411,7 @@ const InteractiveContactForm = () => {
               margin: '0 auto',
               color: '#aaa',
               lineHeight: 1.6,
+              fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
             }}
           >
             Ready to transform your digital vision into reality? Fill out the form below 

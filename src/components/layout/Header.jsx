@@ -101,20 +101,20 @@ const Header = () => {
     backgroundColor: isScrolled ? 'var(--color-secondary-dark)' : 'var(--color-secondary)',
     backdropFilter: isScrolled ? 'blur(24px) saturate(180%)' : 'blur(16px) saturate(180%)',
     boxShadow: isScrolled
-      ? '0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--color-primary-medium)'
-      : '0 4px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--color-primary-light)',
+      ? '0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--color-secondary-medium)'
+      : '0 4px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--color-secondary-light)',
     borderRadius: '16px',
-    border: '1px solid var(--color-primary-medium)',
+    border: '1px solid var(--color-secondary-medium)',
     transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
     pointerEvents: 'auto',
   };
 
   const buttonStyles = {
     padding: '0.75rem 1.5rem',
-    background: 'var(--color-primary-light)',
+    background: 'var(--color-secondary)',
     backdropFilter: 'blur(20px) saturate(180%)',
     color: 'var(--text-on-dark)',
-    border: '1px solid var(--color-primary-medium)',
+    border: '1px solid var(--color-secondary-medium)',
     borderRadius: '10px',
     fontSize: '0.9375rem',
     fontWeight: '500',
@@ -125,7 +125,7 @@ const Header = () => {
     transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
     boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
     position: 'relative',
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
     letterSpacing: '-0.01em',
   };
 
@@ -165,12 +165,12 @@ const Header = () => {
                     fontWeight: '700',
                     color: 'var(--text-on-dark)',
                     letterSpacing: '-0.02em',
-                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                    fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                   }}
                 >
-                  Cypentra
+                  Checkmate
                   <motion.span
-                    style={{ color: 'var(--color-primary)' }}
+                    style={{ color: 'var(--color-secondary)' }}
                     animate={{ opacity: [0.7, 1, 0.7] }}
                     transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                   >
@@ -194,7 +194,9 @@ const Header = () => {
                 >
                   <Link href={item.path}>
                     <motion.div
-                      whileHover={{ color: 'var(--text-on-dark)' }}
+                      whileHover={{ 
+                        color: 'var(--text-on-dark)',
+                      }}
                       style={{
                         display: 'flex',
                         alignItems: 'center',
@@ -206,22 +208,21 @@ const Header = () => {
                         cursor: 'pointer',
                         transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
                         borderRadius: '8px',
-                        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                        fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                         position: 'relative',
                       }}
                     >
-                      {activeDropdown === index && (
-                        <motion.div
-                          layoutId="activeBackground"
-                          style={{
-                            position: 'absolute',
-                            inset: 0,
-                            backgroundColor: 'var(--color-primary-light)',
-                            borderRadius: '8px',
-                          }}
-                          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                        />
-                      )}
+                      <motion.div
+                        layoutId={item.dropdown ? "activeBackground" : undefined}
+                        style={{
+                          position: 'absolute',
+                          inset: 0,
+                          backgroundColor: activeDropdown === index ? 'rgba(59, 130, 246, 0.2)' : 'transparent',
+                          borderRadius: '8px',
+                        }}
+                        whileHover={{ backgroundColor: 'rgba(59, 130, 246, 0.2)' }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                      />
                       <span style={{ position: 'relative', zIndex: 1 }}>{item.label}</span>
                       {item.dropdown && (
                         <motion.svg
@@ -262,8 +263,8 @@ const Header = () => {
                             backdropFilter: 'blur(24px) saturate(180%)',
                             borderRadius: '12px',
                             padding: '0.5rem',
-                            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--color-primary-medium)',
-                            border: '1px solid var(--color-primary-medium)',
+                            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--color-secondary-medium)',
+                            border: '1px solid var(--color-secondary-medium)',
                             zIndex: 10,
                             overflow: 'hidden',
                           }}
@@ -275,7 +276,7 @@ const Header = () => {
                               left: 0,
                               right: 0,
                               height: '2px',
-                              background: 'linear-gradient(90deg, transparent, var(--color-primary-medium), transparent)',
+                              background: 'linear-gradient(90deg, transparent, var(--color-secondary-medium), transparent)',
                               opacity: 0.6,
                             }}
                           />
@@ -289,7 +290,7 @@ const Header = () => {
                                       initial={{ opacity: 0, x: -8 }}
                                       animate={{ opacity: 1, x: 0 }}
                                       transition={{ delay: dropIndex * 0.04, duration: 0.2 }}
-                                      whileHover={{ backgroundColor: 'var(--color-primary-light)', color: 'var(--text-on-dark)', x: 4 }}
+                                      whileHover={{ backgroundColor: 'rgba(59, 130, 246, 0.15)', color: 'var(--text-on-dark)', x: 4 }}
                                       style={{
                                         padding: '0.875rem 1rem',
                                         borderRadius: '8px',
@@ -300,7 +301,7 @@ const Header = () => {
                                         display: 'flex',
                                         alignItems: 'center',
                                         gap: '0.75rem',
-                                        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                                        fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                                         letterSpacing: '-0.01em',
                                       }}
                                     >
@@ -309,14 +310,14 @@ const Header = () => {
                                           width: '36px',
                                           height: '36px',
                                           borderRadius: '8px',
-                                          backgroundColor: 'var(--color-primary-light)',
+                                          backgroundColor: 'rgba(15, 23, 42, 0.08)',
                                           display: 'flex',
                                           alignItems: 'center',
                                           justifyContent: 'center',
-                                          color: 'var(--color-primary)',
+                                          color: '#ffffff',
                                           flexShrink: 0,
                                         }}
-                                        whileHover={{ backgroundColor: 'var(--color-primary-medium)', scale: 1.05 }}
+                                        whileHover={{ backgroundColor: 'rgba(15, 23, 42, 0.2)', scale: 1.05 }}
                                         transition={{ duration: 0.2 }}
                                       >
                                         {IconComponent && <IconComponent />}
@@ -356,9 +357,9 @@ const Header = () => {
             <Link href="/contact">
               <motion.button
                 whileHover={{
-                  backgroundColor: 'var(--color-primary-medium)',
-                  borderColor: 'var(--color-primary)',
-                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                  backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                  borderColor: 'rgba(59, 130, 246, 0.4)',
+                  boxShadow: '0 4px 12px rgba(59, 130, 246, 0.15)',
                 }}
                 whileTap={{ scale: 0.98 }}
                 style={buttonStyles}
@@ -396,7 +397,7 @@ const Header = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                backgroundColor: mobileMenuOpen ? 'var(--color-primary)' : 'var(--overlay-light)',
+                backgroundColor: mobileMenuOpen ? 'var(--color-secondary)' : 'var(--overlay-light)',
                 borderRadius: '6px',
                 border: '1px solid var(--border-light)',
                 cursor: 'pointer',
@@ -465,42 +466,34 @@ const Header = () => {
                 zIndex: 100,
                 overflowY: 'auto',
                 boxShadow: '-10px 0 30px rgba(0, 0, 0, 0.4)',
-                border: '1px solid var(--color-primary-medium)',
+                border: '1px solid var(--color-secondary-medium)',
                 pointerEvents: 'auto',
               }}
             >
               <nav>
                 <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
                   {navItems.map((item, index) => (
-                    <li key={`mobile-nav-${index}`} style={{ marginBottom: '1rem' }}>
-                      <div
-                        onClick={() => item.dropdown && toggleDropdown(index)}
-                        style={{
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center',
-                          padding: '0.75rem 0',
-                          borderBottom: '1px solid var(--border-subtle)',
-                          cursor: item.dropdown ? 'pointer' : 'default',
-                          width: '100%',
-                          userSelect: 'none',
-                          pointerEvents: 'auto',
-                        }}
-                      >
-                        {item.dropdown ? (
-                          <span style={{ color: 'var(--text-on-dark)', fontSize: '1.1rem', fontWeight: 'bold', flex: 1, cursor: 'pointer' }}>
+                    <li key={`mobile-nav-${index}`} style={{ marginBottom: '1rem', position: 'relative' }}>
+                      {item.dropdown ? (
+                        <motion.div
+                          onClick={() => toggleDropdown(index)}
+                          whileHover={{ backgroundColor: 'rgba(59, 130, 246, 0.2)' }}
+                          style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            padding: '0.75rem 1rem',
+                            borderRadius: '8px',
+                            cursor: 'pointer',
+                            width: '100%',
+                            userSelect: 'none',
+                            pointerEvents: 'auto',
+                            transition: 'all 0.2s ease',
+                          }}
+                        >
+                          <span style={{ color: activeDropdown === index ? 'var(--text-on-dark)' : 'var(--text-on-dark-muted)', fontSize: '1.1rem', fontWeight: 'bold', flex: 1 }}>
                             {item.label}
                           </span>
-                        ) : (
-                          <Link
-                            href={item.path}
-                            onClick={closeMobileMenu}
-                            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flex: 1, textDecoration: 'none', cursor: 'pointer', pointerEvents: 'auto' }}
-                          >
-                            <span style={{ color: 'var(--text-on-dark)', fontSize: '1.1rem', fontWeight: 'bold' }}>{item.label}</span>
-                          </Link>
-                        )}
-                        {item.dropdown && (
                           <motion.svg
                             animate={{ rotate: activeDropdown === index ? 180 : 0 }}
                             transition={{ duration: 0.3 }}
@@ -512,12 +505,37 @@ const Header = () => {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            style={{ flexShrink: 0, cursor: 'pointer', pointerEvents: 'auto' }}
+                            style={{ flexShrink: 0 }}
                           >
                             <polyline points="6 9 12 15 18 9"></polyline>
                           </motion.svg>
-                        )}
-                      </div>
+                        </motion.div>
+                      ) : (
+                        <Link
+                          href={item.path}
+                          onClick={closeMobileMenu}
+                          style={{ display: 'block', textDecoration: 'none', pointerEvents: 'auto' }}
+                        >
+                          <motion.div
+                            whileHover={{ backgroundColor: 'rgba(59, 130, 246, 0.2)' }}
+                            style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              padding: '0.75rem 1rem',
+                              borderRadius: '8px',
+                              cursor: 'pointer',
+                              transition: 'all 0.2s ease',
+                            }}
+                          >
+                            <motion.span 
+                              whileHover={{ color: 'var(--text-on-dark)' }}
+                              style={{ color: 'var(--text-on-dark-muted)', fontSize: '1.1rem', fontWeight: 'bold' }}
+                            >
+                              {item.label}
+                            </motion.span>
+                          </motion.div>
+                        </Link>
+                      )}
                       {item.dropdown && (
                         <AnimatePresence>
                           {activeDropdown === index && (
@@ -537,11 +555,12 @@ const Header = () => {
                                       style={{ textDecoration: 'none', display: 'block', pointerEvents: 'auto' }}
                                     >
                                       <motion.div
-                                        whileHover={{ color: 'var(--color-primary)', x: 5 }}
+                                        whileHover={{ backgroundColor: 'rgba(59, 130, 246, 0.15)', color: 'var(--text-on-dark)', x: 5 }}
                                         style={{
                                           color: 'var(--text-on-dark-subtle)',
                                           fontSize: '0.95rem',
-                                          padding: '0.5rem 0',
+                                          padding: '0.5rem 0.75rem',
+                                          borderRadius: '8px',
                                           display: 'flex',
                                           alignItems: 'center',
                                           gap: '0.75rem',
@@ -553,8 +572,7 @@ const Header = () => {
                                             width: '6px',
                                             height: '6px',
                                             borderRadius: '50%',
-                                            backgroundColor: 'var(--color-primary)',
-                                            opacity: 0.7,
+                                            backgroundColor: 'rgba(59, 130, 246, 0.5)',
                                             flexShrink: 0,
                                           }}
                                         />
@@ -578,9 +596,9 @@ const Header = () => {
                 <Link href="/contact" onClick={closeMobileMenu} style={{ textDecoration: 'none', display: 'block', pointerEvents: 'auto' }}>
                   <motion.button
                     whileHover={{
-                      backgroundColor: 'var(--color-primary-medium)',
-                      borderColor: 'var(--color-primary)',
-                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                      backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                      borderColor: 'rgba(59, 130, 246, 0.4)',
+                      boxShadow: '0 4px 12px rgba(59, 130, 246, 0.15)',
                     }}
                     whileTap={{ scale: 0.98 }}
                     style={{ ...buttonStyles, width: '100%', padding: '1rem 1.5rem' }}

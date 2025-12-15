@@ -155,7 +155,7 @@ const Hero = () => {
                   style={{
                     width: `${lineWidthPercent}%`,
                     height: '2px',
-                    background: `linear-gradient(90deg, transparent 0%, rgba(30, 64, 175, ${lineOpacity}) 50%, rgba(30, 64, 175, ${lineOpacity * 1.5}) 100%)`,
+                    background: `linear-gradient(90deg, transparent 0%, rgba(15, 23, 42, ${lineOpacity}) 50%, rgba(15, 23, 42, ${lineOpacity * 1.5}) 100%)`,
                     transform: `translateX(${leftOffset}px)`,
                     borderRadius: '1px',
                   }}
@@ -169,7 +169,7 @@ const Hero = () => {
                   style={{
                     width: `${lineWidthPercent}%`,
                     height: '2px',
-                    background: `linear-gradient(90deg, rgba(30, 64, 175, ${lineOpacity * 1.5}) 0%, rgba(30, 64, 175, ${lineOpacity}) 50%, transparent 100%)`,
+                    background: `linear-gradient(90deg, rgba(15, 23, 42, ${lineOpacity * 1.5}) 0%, rgba(15, 23, 42, ${lineOpacity}) 50%, transparent 100%)`,
                     transform: `translateX(${rightOffset}px)`,
                     borderRadius: '1px',
                   }}
@@ -227,7 +227,7 @@ const Hero = () => {
                   style={{
                     width: `${lineWidthPercent}%`,
                     height: '2px',
-                    background: `linear-gradient(90deg, transparent 0%, rgba(30, 64, 175, ${lineOpacity}) 50%, rgba(30, 64, 175, ${lineOpacity * 1.5}) 100%)`,
+                    background: `linear-gradient(90deg, transparent 0%, rgba(15, 23, 42, ${lineOpacity}) 50%, rgba(15, 23, 42, ${lineOpacity * 1.5}) 100%)`,
                     borderRadius: '1px',
                   }}
                 />
@@ -240,54 +240,11 @@ const Hero = () => {
                   style={{
                     width: `${lineWidthPercent}%`,
                     height: '2px',
-                    background: `linear-gradient(90deg, rgba(30, 64, 175, ${lineOpacity * 1.5}) 0%, rgba(30, 64, 175, ${lineOpacity}) 50%, transparent 100%)`,
+                    background: `linear-gradient(90deg, rgba(15, 23, 42, ${lineOpacity * 1.5}) 0%, rgba(15, 23, 42, ${lineOpacity}) 50%, transparent 100%)`,
                     borderRadius: '1px',
                   }}
                 />
               </div>
-            );
-          })}
-        </div>
-      )}
-
-
-      {/* Mobile: Simplified subtle blocks */}
-      {isMobile && (
-        <div
-          style={{
-            position: 'absolute',
-            right: 0,
-            top: 0,
-            width: '80px',
-            height: '100%',
-            zIndex: 0,
-            pointerEvents: 'none',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '16px',
-            padding: '2rem 0.5rem',
-            alignItems: 'flex-end',
-            opacity: 0.4,
-          }}
-        >
-          {Array.from({ length: 5 }).map((_, i) => {
-            const offset = i % 2 === 0 ? 0 : -8;
-            const depth = i % 2;
-            const isCenterBlock = i >= 2 && i <= 3;
-            return (
-              <div
-                key={`right-mobile-block-${i}`}
-                style={{
-                  width: isCenterBlock ? '50px' : '60px',
-                  height: isCenterBlock ? '50px' : '70px',
-                  background: `linear-gradient(135deg, rgba(255, 255, 255, ${0.95 - depth * 0.05}) 0%, rgba(255, 255, 255, ${0.88 - depth * 0.05}) 100%)`,
-                  backdropFilter: 'blur(15px) saturate(150%)',
-                  borderRadius: '6px',
-                  boxShadow: `0 ${2 + depth}px ${8 + depth * 2}px var(--glass-shadow)`,
-                  transform: `translateX(${offset}px)`,
-                  border: `1px solid var(--glass-border)`,
-                }}
-              />
             );
           })}
         </div>
@@ -366,7 +323,7 @@ const Hero = () => {
                 {' '}
                 <motion.span
                   style={{
-                    backgroundImage: 'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"), linear-gradient(135deg, rgba(30, 64, 175, 0.3) 0%, rgba(59, 130, 246, 0.3) 100%)',
+                    backgroundImage: 'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"), linear-gradient(135deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.3) 100%)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundBlendMode: 'overlay',
@@ -390,7 +347,7 @@ const Hero = () => {
                     text="Powerful"
                     delay={0.3 + (5 * 20) / 1000}
                     imageStyle={{
-                      backgroundImage: 'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"), linear-gradient(135deg, rgba(30, 64, 175, 0.3) 0%, rgba(59, 130, 246, 0.3) 100%)',
+                      backgroundImage: 'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"), linear-gradient(135deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.3) 100%)',
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                       backgroundBlendMode: 'overlay',
@@ -409,7 +366,7 @@ const Hero = () => {
               >
                 <motion.span
                   style={{
-                    backgroundImage: 'url("https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80"), linear-gradient(90deg, rgba(30, 64, 175, 0.2) 0%, rgba(37, 99, 235, 0.2) 50%, rgba(30, 64, 175, 0.2) 100%)',
+                    backgroundImage: 'url("https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80"), linear-gradient(90deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.2) 50%, rgba(15, 23, 42, 0.2) 100%)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundBlendMode: 'overlay',
@@ -432,7 +389,7 @@ const Hero = () => {
                     text="Full-Stack Solutions"
                     delay={0.3 + ((5 + 8) * 20) / 1000}
                     imageStyle={{
-                      backgroundImage: 'url("https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80"), linear-gradient(90deg, rgba(30, 64, 175, 0.2) 0%, rgba(37, 99, 235, 0.2) 50%, rgba(30, 64, 175, 0.2) 100%)',
+                      backgroundImage: 'url("https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80"), linear-gradient(90deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.2) 50%, rgba(15, 23, 42, 0.2) 100%)',
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                       backgroundBlendMode: 'overlay',
@@ -477,7 +434,7 @@ const Hero = () => {
                 {' '}
                 <motion.span
                   style={{
-                    backgroundImage: 'url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80"), linear-gradient(135deg, rgba(30, 64, 175, 0.25) 0%, rgba(59, 130, 246, 0.25) 50%, rgba(96, 165, 250, 0.25) 100%)',
+                    backgroundImage: 'url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80"), linear-gradient(135deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.25) 50%, rgba(15, 23, 42, 0.25) 100%)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundBlendMode: 'overlay',
@@ -501,7 +458,7 @@ const Hero = () => {
                     text="Engineering"
                     delay={0.3 + ((5 + 8 + 20 + 11) * 20) / 1000}
                     imageStyle={{
-                      backgroundImage: 'url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80"), linear-gradient(135deg, rgba(30, 64, 175, 0.25) 0%, rgba(59, 130, 246, 0.25) 50%, rgba(96, 165, 250, 0.25) 100%)',
+                      backgroundImage: 'url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80"), linear-gradient(135deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.25) 50%, rgba(15, 23, 42, 0.25) 100%)',
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                       backgroundBlendMode: 'overlay',
@@ -521,7 +478,7 @@ const Hero = () => {
               transition={{ duration: 1, delay: 1, ease: 'easeOut' }}
               style={{
                 height: '4px',
-                background: 'linear-gradient(90deg, var(--color-primary), var(--color-primary-medium), var(--color-primary))',
+                background: 'linear-gradient(90deg, var(--color-secondary), var(--color-secondary-medium), var(--color-secondary))',
                 borderRadius: '2px',
                 marginTop: '1rem',
                 maxWidth: '200px',
@@ -559,7 +516,7 @@ const Hero = () => {
                 Transform your ideas into{' '}
                 <motion.span
                   style={{
-                    color: 'var(--color-primary)',
+                    color: 'var(--color-secondary)',
                     fontWeight: '600',
                   }}
                 >

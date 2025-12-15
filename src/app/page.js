@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import Hero from '../components/sections/Hero';
 import ServicesSection from '../components/sections/ServicesSection';
 import AIPersonalizedContent from '../components/sections/AIPersonalizedContent';
-import ChessTimeline from '../components/sections/ChessTimeline';
-import ChessCaseStudies from '../components/sections/ChessCaseStudies';
+import Timeline from '../components/sections/Timeline';
+import CaseStudies from '../components/sections/CaseStudies';
 import ChessGrandmastersTeam from '../components/sections/ChessGrandmastersTeam';
 import InteractiveContactForm from '../components/sections/InteractiveContactForm';
 import ChessFaqAccordion from '../components/sections/ChessFaqAccordion';
@@ -14,13 +14,13 @@ import ChessFooter from '@/components/layout/ChessFooter';
 export default function Home() {
   // State for loading screen or other page-level state if needed
   const [isLoading, setIsLoading] = useState(true);
-
+  
   // Simulate loading effect
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
-
+    
     return () => clearTimeout(timer);
   }, []);
 
@@ -33,12 +33,12 @@ export default function Home() {
       ) : (
         <>
           <Header />
-          <main>
+          <main style={{ backgroundColor: '#ffffff' }}>
             <Hero />
             <ServicesSection />
             <AIPersonalizedContent />
-            <ChessTimeline />
-            <ChessCaseStudies />
+            <Timeline />
+            <CaseStudies />
             <ChessGrandmastersTeam />
             <InteractiveContactForm />
             <ChessFaqAccordion />
@@ -46,7 +46,7 @@ export default function Home() {
           <ChessFooter />
         </>
       )}
-
+      
       <style jsx>{`
         .loading-screen {
           position: fixed;

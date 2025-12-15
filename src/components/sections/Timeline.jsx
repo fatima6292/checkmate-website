@@ -380,7 +380,7 @@ const Timeline = () => {
         return null;
     }
   };
-  
+
   // Timeline data
   const timelineItems = [
     {
@@ -438,7 +438,7 @@ const Timeline = () => {
       image: '/images/support-optimization.jpg'
     }
   ];
-  
+
   // Initialize animations when component mounts
   useEffect(() => {
     if (isMobile) {
@@ -458,14 +458,14 @@ const Timeline = () => {
           end: 'bottom center',
         }
       });
-      
+
       // Timeline items animations - desktop only
       timelineItems.forEach((_, index) => {
         gsap.fromTo(
           `.timeline-item-${index}`,
-          { 
-            opacity: 0, 
-            x: index % 2 === 0 ? -50 : 50 
+          {
+            opacity: 0,
+            x: index % 2 === 0 ? -50 : 50
           },
           {
             opacity: 1,
@@ -481,19 +481,19 @@ const Timeline = () => {
         );
       });
     }, timelineRef);
-    
+
     return () => ctx.revert();
   }, [isMobile]);
-  
+
   // Calculate progress opacity based on scroll
   const progressOpacity = useTransform(
     scrollYProgress,
     [0, 0.1, 0.9, 1],
     [0, 1, 1, 0]
   );
-  
+
   return (
-    <section 
+    <section
       ref={timelineRef}
       className="chess-timeline-section"
       style={{
@@ -733,7 +733,7 @@ const Timeline = () => {
           </>
         )}
       </div>
-      
+
       <div className="container" style={{
         maxWidth: '1200px',
         margin: '0 auto',
@@ -779,7 +779,7 @@ const Timeline = () => {
             within budget, and built to scale with your business needs.
           </p>
         </div>
-        
+
         {/* Vertical timeline with progress indicator */}
         <div className="timeline-container" style={{
           position: 'relative',
@@ -787,7 +787,7 @@ const Timeline = () => {
           margin: '0 auto',
         }}>
           {/* Timeline progress bar */}
-          <motion.div 
+          <motion.div
             className="timeline-progress"
             style={{
               position: 'absolute',
@@ -800,7 +800,7 @@ const Timeline = () => {
               opacity: progressOpacity,
             }}
           >
-            <div 
+            <div
               className="timeline-progress-fill"
               style={{
                 position: 'absolute',
@@ -812,10 +812,10 @@ const Timeline = () => {
               }}
             />
           </motion.div>
-          
+
           {/* Timeline items */}
           {timelineItems.map((item, index) => (
-            <TimelineItem 
+            <TimelineItem
               key={item.id}
               item={item}
               index={index}
@@ -837,16 +837,16 @@ const Timeline = () => {
 const TimelineItem = ({ item, index, isEven, isActive, setActiveItem, total, TimelineIcon, isMobile = false }) => {
   const itemRef = useRef(null);
   const isInView = useInView(itemRef, { once: false, amount: 0.5 });
-  
+
   // Automatically set active item when it comes into view
   useEffect(() => {
     if (isInView) {
       setActiveItem(item.id);
     }
   }, [isInView, item.id, setActiveItem]);
-  
+
   return (
-    <div 
+    <div
       ref={itemRef}
       className={`timeline-item timeline-item-${index}`}
       style={{
@@ -885,7 +885,7 @@ const TimelineItem = ({ item, index, isEven, isActive, setActiveItem, total, Tim
         }}>
           {item.date}
         </span>
-        
+
         <h3 style={{
           fontSize: isMobile ? '1.25rem' : '1.8rem',
           fontWeight: 'bold',
@@ -896,7 +896,7 @@ const TimelineItem = ({ item, index, isEven, isActive, setActiveItem, total, Tim
         }}>
           {item.title}
         </h3>
-        
+
         <p style={{
           fontSize: isMobile ? '0.9rem' : '1rem',
           color: '#666',
@@ -906,7 +906,7 @@ const TimelineItem = ({ item, index, isEven, isActive, setActiveItem, total, Tim
         }}>
           {item.content}
         </p>
-        
+
         <motion.button
           whileHover={{ scale: isMobile ? 1 : 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -924,14 +924,14 @@ const TimelineItem = ({ item, index, isEven, isActive, setActiveItem, total, Tim
           }}
         >
           Learn More
-          <svg 
+          <svg
             width={isMobile ? "14" : "16"}
             height={isMobile ? "14" : "16"}
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
             strokeLinejoin="round"
             style={{ marginLeft: '0.5rem' }}
           >
@@ -940,23 +940,23 @@ const TimelineItem = ({ item, index, isEven, isActive, setActiveItem, total, Tim
           </svg>
         </motion.button>
       </motion.div>
-      
+
       {/* Timeline node */}
       <motion.div
         initial={{ scale: isMobile ? 1 : 0 }}
         animate={isMobile ? { scale: 1 } : (isInView ? { scale: 1 } : { scale: 0 })}
         transition={isMobile ? {} : {
-          type: 'spring', 
-          stiffness: 300, 
-          damping: 15, 
-          delay: 0.2 
+          type: 'spring',
+          stiffness: 300,
+          damping: 15,
+          delay: 0.2
         }}
         style={{
           width: isMobile ? '50px' : '80px',
           height: isMobile ? '50px' : '80px',
           borderRadius: '50%',
           backgroundColor: isActive ? 'var(--color-secondary)' : '#f0f0f0',
-          boxShadow: isActive 
+          boxShadow: isActive
             ? `0 0 0 ${isMobile ? '3px' : '5px'} var(--color-secondary-light), 0 5px 20px rgba(0,0,0,0.15)`
             : '0 5px 15px rgba(0,0,0,0.1)',
           display: 'flex',
@@ -972,7 +972,7 @@ const TimelineItem = ({ item, index, isEven, isActive, setActiveItem, total, Tim
         }}
       >
         <TimelineIcon iconType={item.iconType} size={isMobile ? 24 : 40} color={isActive ? 'white' : '#aaa'} />
-        
+
         {/* Progress indicator for first and last items */}
         {index === 0 && (
           <div style={{
@@ -989,7 +989,7 @@ const TimelineItem = ({ item, index, isEven, isActive, setActiveItem, total, Tim
             START
           </div>
         )}
-        
+
         {index === total - 1 && (
           <div style={{
             position: 'absolute',
@@ -1006,29 +1006,29 @@ const TimelineItem = ({ item, index, isEven, isActive, setActiveItem, total, Tim
           </div>
         )}
       </motion.div>
-      
+
       {/* Image side */}
       {!isMobile && (
-      <motion.div
-        initial={{ opacity: 0, x: isEven ? 50 : -50 }}
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isEven ? 50 : -50 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        style={{
-          flex: 1,
-          maxWidth: '400px',
-          height: '250px',
-          borderRadius: '12px',
-          overflow: 'hidden',
-          boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
-          marginLeft: isEven ? 'auto' : 0,
-          marginRight: isEven ? 0 : 'auto',
-          position: 'relative',
-        }}
-      >
+        <motion.div
+          initial={{ opacity: 0, x: isEven ? 50 : -50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isEven ? 50 : -50 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          style={{
+            flex: 1,
+            maxWidth: '400px',
+            height: '250px',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+            marginLeft: isEven ? 'auto' : 0,
+            marginRight: isEven ? 0 : 'auto',
+            position: 'relative',
+          }}
+        >
           {/* Actual image background */}
-        <div style={{
-          width: '100%',
-          height: '100%',
+          <div style={{
+            width: '100%',
+            height: '100%',
             backgroundImage: `url(${item.image})`,
             backgroundSize: 'contain',
             backgroundPosition: 'center',
@@ -1045,20 +1045,20 @@ const TimelineItem = ({ item, index, isEven, isActive, setActiveItem, total, Tim
               bottom: 0,
               background: 'linear-gradient(to top, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.1))',
             }} />
-        </div>
-        
-        {/* Image overlay with gradient */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
+          </div>
+
+          {/* Image overlay with gradient */}
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
             background: 'linear-gradient(to top, var(--color-secondary-medium), transparent)',
             opacity: isActive ? 0.5 : 0,
-          transition: 'opacity 0.3s ease',
-        }} />
-      </motion.div>
+            transition: 'opacity 0.3s ease',
+          }} />
+        </motion.div>
       )}
     </div>
   );

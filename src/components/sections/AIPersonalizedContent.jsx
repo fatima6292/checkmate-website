@@ -63,7 +63,7 @@ const EnhancedAIStrategyAnalyzer = () => {
       id: 'service',
       question: 'What service do you need most?',
       iconType: 'service',
-      color: 'var(--color-primary)',
+      color: 'var(--color-secondary)',
       options: [
         { value: 'fullstack', label: 'Full-Stack Development' },
         { value: 'software', label: 'Software Engineering' },
@@ -77,7 +77,7 @@ const EnhancedAIStrategyAnalyzer = () => {
       id: 'size',
       question: 'What is the size of your organization?',
       iconType: 'size',
-      color: 'var(--color-primary)',
+      color: 'var(--color-secondary)',
       options: [
         { value: 'startup', label: 'Startup (1-10 employees)' },
         { value: 'small', label: 'Small Business (11-50 employees)' },
@@ -89,7 +89,7 @@ const EnhancedAIStrategyAnalyzer = () => {
       id: 'goal',
       question: 'What is your primary goal?',
       iconType: 'goal',
-      color: 'var(--color-primary)',
+      color: 'var(--color-secondary)',
       options: [
         { value: 'launch', label: 'Launch New Product/Service' },
         { value: 'scale', label: 'Scale Existing Platform' },
@@ -102,7 +102,7 @@ const EnhancedAIStrategyAnalyzer = () => {
       id: 'challenge',
       question: 'What is your biggest technical challenge?',
       iconType: 'challenge',
-      color: 'var(--color-primary)',
+      color: 'var(--color-secondary)',
       options: [
         { value: 'performance', label: 'Performance & Scalability' },
         { value: 'security', label: 'Security Vulnerabilities' },
@@ -116,7 +116,7 @@ const EnhancedAIStrategyAnalyzer = () => {
       id: 'timeframe',
       question: 'What is your project timeframe?',
       iconType: 'timeframe',
-      color: 'var(--color-primary)',
+      color: 'var(--color-secondary)',
       options: [
         { value: 'urgent', label: 'Urgent (0-3 months)' },
         { value: 'short', label: 'Short-term (3-6 months)' },
@@ -139,7 +139,7 @@ const EnhancedAIStrategyAnalyzer = () => {
   const defaultStrategy = {
     name: "Comprehensive Development Package",
     icon: <ResultIcon />,
-    color: "var(--color-primary)",
+    color: "var(--color-secondary)",
     description: "A balanced approach combining full-stack development with cloud infrastructure and security best practices.",
     moves: [
       "Assess current technology stack and infrastructure",
@@ -159,7 +159,7 @@ const EnhancedAIStrategyAnalyzer = () => {
         launch: {
           name: "Starter Build Package",
           icon: <ResultIcon />,
-          color: "var(--color-primary)",
+          color: "var(--color-secondary)",
           description: "Perfect for MVPs and small SaaS applications. Get your product to market quickly with a solid foundation.",
           moves: [
             "Build responsive frontend with React/Next.js",
@@ -174,7 +174,7 @@ const EnhancedAIStrategyAnalyzer = () => {
         scale: {
           name: "Professional App Package",
           icon: <ResultIcon />,
-          color: "var(--color-primary)",
+          color: "var(--color-secondary)",
           description: "Scalable architecture for growing applications. Built to handle increased traffic and complexity.",
           moves: [
             "Design scalable microservices architecture",
@@ -186,12 +186,12 @@ const EnhancedAIStrategyAnalyzer = () => {
           weaknesses: "Higher initial investment",
           timeframe: "4-6 months"
         }
-      },
+        },
       small: {
         launch: {
           name: "Professional App Package",
           icon: <ResultIcon />,
-          color: "var(--color-primary)",
+          color: "var(--color-secondary)",
           description: "Custom UI/UX with secure authentication and robust backend systems.",
           moves: [
             "Custom UI/UX design and implementation",
@@ -203,14 +203,14 @@ const EnhancedAIStrategyAnalyzer = () => {
           weaknesses: "Moderate timeline",
           timeframe: "3-5 months"
         }
-      }
-    },
+        }
+      },
     devops: {
       startup: {
         migrate: {
           name: "Cloud Essentials Package",
           icon: <ResultIcon />,
-          color: "var(--color-primary)",
+          color: "var(--color-secondary)",
           description: "Perfect for startups getting started with cloud infrastructure.",
           moves: [
             "AWS/GCP cloud setup and configuration",
@@ -222,12 +222,12 @@ const EnhancedAIStrategyAnalyzer = () => {
           weaknesses: "May need upgrades as you grow",
           timeframe: "1-2 months"
         }
-      },
+        },
       medium: {
         scale: {
           name: "Managed Cloud Ops Package",
           icon: "☁️",
-          color: "var(--color-primary)",
+          color: "var(--color-secondary)",
           description: "24/7 monitoring and management for growing companies.",
           moves: [
             "24/7 monitoring and alerting",
@@ -246,7 +246,7 @@ const EnhancedAIStrategyAnalyzer = () => {
         security: {
           name: "Basic Security Maintenance",
           icon: "🔒",
-          color: "var(--color-primary)",
+          color: "var(--color-secondary)",
           description: "Essential security services for small businesses.",
           moves: [
             "Monthly vulnerability scanning",
@@ -257,13 +257,13 @@ const EnhancedAIStrategyAnalyzer = () => {
           strengths: "Affordable; essential protection",
           weaknesses: "Basic level coverage",
           timeframe: "Monthly"
-        }
-      },
+      }
+    },
       medium: {
         compliance: {
           name: "Compliance Suite",
           icon: "🔒",
-          color: "var(--color-primary)",
+          color: "var(--color-secondary)",
           description: "Full compliance support for SOC 2 and GDPR requirements.",
           moves: [
             "SOC 2/GDPR readiness assessment",
@@ -382,7 +382,7 @@ const EnhancedAIStrategyAnalyzer = () => {
       // Calculate progress based on completed questions (starts from 0%)
       const completedQuestions = Object.keys(answers).length;
       const progressPercent = (completedQuestions / questions.length) * 100;
-      
+
       gsap.to(progressRef.current, {
         width: `${progressPercent}%`,
         duration: 0.5,
@@ -515,152 +515,155 @@ const EnhancedAIStrategyAnalyzer = () => {
         background: '#ffffff',
         color: 'var(--text-on-light)',
         overflow: 'hidden',
+        marginTop: '-1px',
       }}
     >
       {/* Background - Different Style Variation */}
-      {!isMobile ? (
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            zIndex: 0,
-            pointerEvents: 'none',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            gap: '24px',
-            padding: '4rem 0',
-          }}
-        >
-          {Array.from({ length: 32 }).map((_, i) => {
-            const depth = i % 4;
-            const lineOpacity = 0.08 + depth * 0.03;
+      {!showResults && (
+        !isMobile ? (
+          <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+              right: 0,
+              bottom: 0,
+              zIndex: 0,
+          pointerEvents: 'none',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              gap: '24px',
+              padding: '4rem 0',
+            }}
+          >
+            {Array.from({ length: 32 }).map((_, i) => {
+              const depth = i % 4;
+              const lineOpacity = 0.08 + depth * 0.03;
 
-            // Calculate distance from center (16 is the middle of 32)
-            const centerIndex = 16;
-            const distanceFromCenter = Math.abs(i - centerIndex);
-            const maxDistance = centerIndex;
+              // Calculate distance from center (16 is the middle of 32)
+              const centerIndex = 16;
+              const distanceFromCenter = Math.abs(i - centerIndex);
+              const maxDistance = centerIndex;
 
-            // Lines get shorter as they approach center - different curve
-            const lineWidthPercent = 8 + (distanceFromCenter / maxDistance) * 18;
-            const centerGapPercent = 100 - (lineWidthPercent * 2);
+              // Lines get shorter as they approach center - different curve
+              const lineWidthPercent = 8 + (distanceFromCenter / maxDistance) * 18;
+              const centerGapPercent = 100 - (lineWidthPercent * 2);
 
-            // Add subtle offset for visual interest
-            const offset = depth % 2 === 0 ? 15 : -15;
+              // Add subtle offset for visual interest
+              const offset = depth % 2 === 0 ? 15 : -15;
 
-            return (
-              <div
-                key={`line-${i}`}
-                style={{
-                  width: '100%',
-                  height: '1.5px',
-                  position: 'relative',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                }}
-              >
-                {/* Left side line */}
+              return (
                 <div
+                  key={`line-${i}`}
                   style={{
-                    width: `${lineWidthPercent}%`,
+                    width: '100%',
                     height: '1.5px',
-                    background: `linear-gradient(90deg, transparent 0%, rgba(30, 64, 175, ${lineOpacity * 0.5}) 30%, rgba(30, 64, 175, ${lineOpacity}) 70%, rgba(30, 64, 175, ${lineOpacity * 1.2}) 100%)`,
-                    borderRadius: '2px',
-                    transform: `translateX(${offset}px)`,
-                    opacity: 0.7 + depth * 0.1,
+                    position: 'relative',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
                   }}
-                />
+                >
+                  {/* Left side line */}
+                  <div
+                    style={{
+                      width: `${lineWidthPercent}%`,
+                      height: '1.5px',
+                      background: `linear-gradient(90deg, transparent 0%, rgba(15, 23, 42, ${lineOpacity * 0.5}) 30%, rgba(15, 23, 42, ${lineOpacity}) 70%, rgba(15, 23, 42, ${lineOpacity * 1.2}) 100%)`,
+                      borderRadius: '2px',
+                      transform: `translateX(${offset}px)`,
+                      opacity: 0.7 + depth * 0.1,
+                    }}
+                  />
 
-                {/* Center gap */}
-                <div style={{ width: `${centerGapPercent}%`, height: '1.5px' }} />
+                  {/* Center gap */}
+                  <div style={{ width: `${centerGapPercent}%`, height: '1.5px' }} />
 
-                {/* Right side line */}
+                  {/* Right side line */}
+                  <div
+                    style={{
+                      width: `${lineWidthPercent}%`,
+                      height: '1.5px',
+                      background: `linear-gradient(90deg, rgba(15, 23, 42, ${lineOpacity * 1.2}) 0%, rgba(15, 23, 42, ${lineOpacity}) 30%, rgba(15, 23, 42, ${lineOpacity * 0.5}) 70%, transparent 100%)`,
+                      borderRadius: '2px',
+                      transform: `translateX(${-offset}px)`,
+                      opacity: 0.7 + depth * 0.1,
+                    }}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+      <div
+        style={{
+          position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+          zIndex: 0,
+              pointerEvents: 'none',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-start',
+              gap: '20px',
+              padding: '2rem 0.5rem',
+              minHeight: '100%',
+            }}
+          >
+            {Array.from({ length: 25 }).map((_, i) => {
+              const lineOpacity = 0.08;
+
+              // Calculate distance from center (12.5 is the middle of 25)
+              const centerIndex = 12.5;
+              const distanceFromCenter = Math.abs(i - centerIndex);
+              const maxDistance = centerIndex;
+
+              // Lines get shorter as they approach center - mobile optimized
+              const lineWidthPercent = 15 + (distanceFromCenter / maxDistance) * 18;
+              const centerGapPercent = Math.max(30, 100 - (lineWidthPercent * 2));
+
+              return (
                 <div
+                  key={`mobile-line-${i}`}
                   style={{
-                    width: `${lineWidthPercent}%`,
-                    height: '1.5px',
-                    background: `linear-gradient(90deg, rgba(30, 64, 175, ${lineOpacity * 1.2}) 0%, rgba(30, 64, 175, ${lineOpacity}) 30%, rgba(30, 64, 175, ${lineOpacity * 0.5}) 70%, transparent 100%)`,
-                    borderRadius: '2px',
-                    transform: `translateX(${-offset}px)`,
-                    opacity: 0.7 + depth * 0.1,
-                  }}
-                />
-              </div>
-            );
-          })}
-        </div>
-      ) : (
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            zIndex: 0,
-            pointerEvents: 'none',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-start',
-            gap: '20px',
-            padding: '2rem 0.5rem',
-            minHeight: '100%',
-          }}
-        >
-          {Array.from({ length: 25 }).map((_, i) => {
-            const lineOpacity = 0.08;
-
-            // Calculate distance from center (12.5 is the middle of 25)
-            const centerIndex = 12.5;
-            const distanceFromCenter = Math.abs(i - centerIndex);
-            const maxDistance = centerIndex;
-
-            // Lines get shorter as they approach center - mobile optimized
-            const lineWidthPercent = 15 + (distanceFromCenter / maxDistance) * 18;
-            const centerGapPercent = Math.max(30, 100 - (lineWidthPercent * 2));
-
-            return (
-              <div
-                key={`mobile-line-${i}`}
-                style={{
-                  width: '100%',
-                  height: '1px',
-                  position: 'relative',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                }}
-              >
-                {/* Left side line */}
-                <div
-                  style={{
-                    width: `${lineWidthPercent}%`,
+                    width: '100%',
                     height: '1px',
-                    background: `linear-gradient(90deg, transparent 0%, rgba(30, 64, 175, ${lineOpacity}) 50%, rgba(30, 64, 175, ${lineOpacity * 1.5}) 100%)`,
-                    borderRadius: '1px',
+                    position: 'relative',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
                   }}
-                />
+                >
+                  {/* Left side line */}
+                  <div
+                    style={{
+                      width: `${lineWidthPercent}%`,
+                      height: '1px',
+                      background: `linear-gradient(90deg, transparent 0%, rgba(15, 23, 42, ${lineOpacity}) 50%, rgba(15, 23, 42, ${lineOpacity * 1.5}) 100%)`,
+                      borderRadius: '1px',
+                    }}
+                  />
 
-                {/* Center gap */}
-                <div style={{ width: `${centerGapPercent}%`, height: '1px' }} />
+                  {/* Center gap */}
+                  <div style={{ width: `${centerGapPercent}%`, height: '1px' }} />
 
-                {/* Right side line */}
-                <div
-                  style={{
-                    width: `${lineWidthPercent}%`,
-                    height: '1px',
-                    background: `linear-gradient(90deg, rgba(30, 64, 175, ${lineOpacity * 1.5}) 0%, rgba(30, 64, 175, ${lineOpacity}) 50%, transparent 100%)`,
-                    borderRadius: '1px',
-                  }}
-                />
-              </div>
-            );
-          })}
-        </div>
+                  {/* Right side line */}
+      <div
+        style={{
+                      width: `${lineWidthPercent}%`,
+                      height: '1px',
+                      background: `linear-gradient(90deg, rgba(15, 23, 42, ${lineOpacity * 1.5}) 0%, rgba(15, 23, 42, ${lineOpacity}) 50%, transparent 100%)`,
+                      borderRadius: '1px',
+        }}
+      />
+                </div>
+              );
+            })}
+          </div>
+        )
       )}
 
       <div className="container" style={{
@@ -671,67 +674,69 @@ const EnhancedAIStrategyAnalyzer = () => {
         zIndex: 1,
       }}>
         {!showResults && (
-          <div style={{
-            textAlign: 'center',
-            marginBottom: '3rem',
-          }}>
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+        <div style={{
+          textAlign: 'center',
+          marginBottom: '3rem',
+        }}>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
                 padding: '0.5rem 1rem',
-                background: 'var(--color-primary-light)',
+                background: 'var(--color-secondary-light)',
                 borderRadius: '8px',
-                marginBottom: '1.5rem',
+              marginBottom: '1.5rem',
               }}
-            >
-              <span style={{
-                color: 'var(--color-primary)',
+          >
+            <span style={{
+                color: 'var(--color-secondary)',
                 fontWeight: '600',
                 fontSize: '0.875rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em',
-              }}>
+                fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+            }}>
                 Service Recommendation Tool
-              </span>
-            </motion.div>
+            </span>
+          </motion.div>
 
-            <motion.h2
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              style={{
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            style={{
                 fontSize: isMobile ? '2rem' : '3rem',
                 fontWeight: '700',
-                marginBottom: '1rem',
+              marginBottom: '1rem',
                 color: 'var(--text-on-light)',
                 fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                 lineHeight: 1.2,
-              }}
-            >
+            }}
+          >
               Find Your Perfect Service Package
-            </motion.h2>
+          </motion.h2>
 
-            <motion.p
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              style={{
+          <motion.p
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            style={{
                 fontSize: isMobile ? '1rem' : '1.25rem',
                 color: 'var(--text-on-light-muted)',
-                maxWidth: '700px',
-                margin: '0 auto',
+              maxWidth: '700px',
+              margin: '0 auto',
                 lineHeight: 1.7,
-              }}
-            >
+                fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+            }}
+          >
               Answer a few questions and we'll recommend the perfect Cypentra service package
               tailored to your needs, goals, and timeline.
-            </motion.p>
-          </div>
+          </motion.p>
+        </div>
         )}
 
         <motion.div
@@ -760,12 +765,12 @@ const EnhancedAIStrategyAnalyzer = () => {
                 marginBottom: '3rem',
               }}>
                 <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
+                display: 'flex',
+                alignItems: 'center',
                   justifyContent: 'space-between',
                   marginBottom: '1rem',
-                }}>
-                  <div style={{
+              }}>
+                <div style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.75rem',
@@ -774,45 +779,47 @@ const EnhancedAIStrategyAnalyzer = () => {
                       width: '40px',
                       height: '40px',
                       borderRadius: '12px',
-                      background: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)',
+                      background: 'var(--color-secondary)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       color: 'white',
                       fontWeight: '700',
                       fontSize: '0.875rem',
-                      boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)',
+                      boxShadow: '0 4px 12px rgba(15, 23, 42, 0.25)',
                     }}>
                       {currentQuestion + 1}
                     </div>
-                      <div>
-                        <div style={{
-                          fontSize: '0.875rem',
-                          color: 'var(--text-on-light-muted)',
-                          fontWeight: '500',
-                          marginBottom: '0.125rem',
-                        }}>
-                          Question {currentQuestion + 1} of {questions.length}
-                        </div>
-                        <div style={{
-                          fontSize: '0.75rem',
-                          color: 'var(--text-on-light-muted)',
-                          opacity: 0.7,
-                        }}>
-                          {Math.round((Object.keys(answers).length / questions.length) * 100)}% Complete
-                        </div>
+                    <div>
+                      <div style={{
+                        fontSize: '0.875rem',
+                        color: 'var(--text-on-light-muted)',
+                        fontWeight: '500',
+                        marginBottom: '0.125rem',
+                        fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+                      }}>
+                        Question {currentQuestion + 1} of {questions.length}
+                      </div>
+                      <div style={{
+                        fontSize: '0.75rem',
+                        color: 'var(--text-on-light-muted)',
+                        opacity: 0.7,
+                        fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+                      }}>
+                        {Math.round((Object.keys(answers).length / questions.length) * 100)}% Complete
                       </div>
                     </div>
-                    <div style={{
-                      fontSize: '1.125rem',
-                      fontWeight: '700',
-                      color: 'var(--color-primary)',
-                      fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
-                    }}>
-                      {Math.round((Object.keys(answers).length / questions.length) * 100)}%
-                    </div>
+                  </div>
+                  <div style={{
+                    fontSize: '1.125rem',
+                    fontWeight: '700',
+                    color: 'var(--color-secondary)',
+                    fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
+                  }}>
+                    {Math.round((Object.keys(answers).length / questions.length) * 100)}%
+                  </div>
                 </div>
-                
+
                 {/* Advanced Progress Bar */}
                 <div style={{
                   position: 'relative',
@@ -843,7 +850,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                       opacity: 0.5,
                     }}
                   />
-                  
+
                   {/* Progress fill */}
                   <motion.div
                     ref={progressRef}
@@ -853,9 +860,9 @@ const EnhancedAIStrategyAnalyzer = () => {
                       left: 0,
                       height: '100%',
                       width: '0%',
-                      background: 'linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%)',
+                      background: 'linear-gradient(90deg, var(--color-secondary) 0%, var(--color-secondary) 100%)',
                       borderRadius: '100px',
-                      boxShadow: '0 0 12px rgba(30, 64, 175, 0.4)',
+                      boxShadow: '0 0 12px rgba(15, 23, 42, 0.4)',
                       position: 'relative',
                       overflow: 'hidden',
                     }}
@@ -882,7 +889,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                       }}
                     />
                   </motion.div>
-                  
+
                   {/* Step indicators */}
                   <div style={{
                     position: 'absolute',
@@ -904,11 +911,11 @@ const EnhancedAIStrategyAnalyzer = () => {
                             width: '4px',
                             height: '4px',
                             borderRadius: '50%',
-                            backgroundColor: isAnswered 
-                              ? 'rgba(255, 255, 255, 0.8)' 
+                            backgroundColor: isAnswered
+                              ? 'rgba(255, 255, 255, 0.8)'
                               : 'rgba(0, 0, 0, 0.1)',
-                            boxShadow: isAnswered 
-                              ? '0 0 4px rgba(255, 255, 255, 0.6)' 
+                            boxShadow: isAnswered
+                              ? '0 0 4px rgba(255, 255, 255, 0.6)'
                               : 'none',
                           }}
                         />
@@ -958,16 +965,16 @@ const EnhancedAIStrategyAnalyzer = () => {
                           width: '48px',
                           height: '48px',
                           borderRadius: '10px',
-                          backgroundColor: 'var(--color-primary-light)',
-                          color: 'var(--color-primary)',
+                          backgroundColor: 'var(--color-secondary-light)',
+                          color: 'var(--color-secondary)',
                           marginBottom: '1.5rem',
                         }}>
                           <QuestionIcon type={questions[currentQuestion].iconType} />
                         </div>
-                        
-                        <motion.h3
-                          variants={itemVariants}
-                          style={{
+
+                      <motion.h3
+                        variants={itemVariants}
+                        style={{
                             fontSize: isMobile ? '1.5rem' : '2rem',
                             fontWeight: '700',
                             color: 'var(--text-on-light)',
@@ -977,74 +984,75 @@ const EnhancedAIStrategyAnalyzer = () => {
                             maxWidth: '800px',
                             marginLeft: 'auto',
                             marginRight: 'auto',
-                          }}
-                        >
-                          {questions[currentQuestion].question}
-                        </motion.h3>
+                        }}
+                      >
+                        {questions[currentQuestion].question}
+                      </motion.h3>
                       </motion.div>
 
                       {/* Answer options - Attractive Card Design */}
-                      <div style={{
-                        display: 'grid',
+                    <div style={{
+                      display: 'grid',
                         gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
-                        gap: '1rem',
-                      }}>
+                      gap: '1rem',
+                    }}>
                         {questions[currentQuestion].options.map((option, idx) => {
                           const isSelected = answers[questions[currentQuestion].id] === option.value;
                           return (
-                            <motion.button
-                              key={option.value}
-                              custom={idx}
-                              variants={optionVariants}
-                              initial="hidden"
+                        <motion.button
+                          key={option.value}
+                          custom={idx}
+                          variants={optionVariants}
+                          initial="hidden"
                               animate={isSelected ? "selected" : "visible"}
-                              whileHover={{ 
+                              whileHover={{
                                 scale: 1.02,
                                 transition: { duration: 0.2 }
                               }}
                               whileTap={{ scale: 0.98 }}
-                              onClick={() => handleAnswerSelect(questions[currentQuestion].id, option.value)}
-                              style={{
+                          onClick={() => handleAnswerSelect(questions[currentQuestion].id, option.value)}
+                          style={{
                                 padding: '1.25rem 1.5rem',
-                                background: isSelected 
-                                  ? 'var(--color-primary)' 
-                                  : 'white',
-                                border: `2px solid ${isSelected 
-                                  ? 'var(--color-primary)' 
+                                background: isSelected
+                                  ? 'var(--color-secondary)'
+                              : 'white',
+                                border: `2px solid ${isSelected
+                                  ? 'var(--color-secondary)'
                                   : 'rgba(0, 0, 0, 0.08)'
-                                }`,
+                                  }`,
                                 borderRadius: '12px',
-                                color: isSelected 
-                                  ? 'white' 
+                                color: isSelected
+                                  ? 'white'
                                   : 'var(--text-on-light)',
-                                textAlign: 'left',
+                            textAlign: 'left',
                                 fontWeight: isSelected ? '600' : '500',
-                                cursor: 'pointer',
-                                position: 'relative',
+                            cursor: 'pointer',
+                            position: 'relative',
                                 transition: 'all 0.2s ease',
                                 fontSize: '1rem',
                                 lineHeight: 1.5,
                                 display: 'flex',
                                 alignItems: 'center',
                                 gap: '1rem',
-                                boxShadow: isSelected 
-                                  ? '0 4px 12px rgba(30, 64, 175, 0.2)' 
+                                boxShadow: isSelected
+                                  ? '0 4px 12px rgba(15, 23, 42, 0.2)'
                                   : '0 2px 4px rgba(0, 0, 0, 0.04)',
-                              }}
-                            >
+                                fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+                          }}
+                        >
                               {/* Radio indicator */}
-                              <motion.div
+                            <motion.div
                                 animate={{
                                   scale: isSelected ? 1 : 0.9,
                                 }}
-                                style={{
+                              style={{
                                   width: '20px',
                                   height: '20px',
                                   borderRadius: '50%',
-                                  border: `2px solid ${isSelected 
-                                    ? 'white' 
+                                  border: `2px solid ${isSelected
+                                    ? 'white'
                                     : 'var(--text-on-light-muted)'
-                                  }`,
+                                    }`,
                                   display: 'flex',
                                   alignItems: 'center',
                                   justifyContent: 'center',
@@ -1061,13 +1069,13 @@ const EnhancedAIStrategyAnalyzer = () => {
                                       height: '8px',
                                       borderRadius: '50%',
                                       backgroundColor: 'white',
-                                    }}
-                                  />
-                                )}
+                              }}
+                            />
+                          )}
                               </motion.div>
-                              
+
                               <span style={{ flex: 1 }}>{option.label}</span>
-                              
+
                               {isSelected && (
                                 <motion.svg
                                   initial={{ opacity: 0, scale: 0 }}
@@ -1084,7 +1092,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                                   <polyline points="20 6 9 17 4 12"></polyline>
                                 </motion.svg>
                               )}
-                            </motion.button>
+                        </motion.button>
                           );
                         })}
                       </div>
@@ -1118,6 +1126,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                           fontWeight: '500',
                           fontSize: '0.9375rem',
                           transition: 'all 0.2s ease',
+                          fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                         }}
                       >
                         <svg
@@ -1137,34 +1146,35 @@ const EnhancedAIStrategyAnalyzer = () => {
 
                       {currentQuestion === questions.length - 1 ? (
                         <motion.button
-                          whileHover={isCurrentQuestionAnswered() ? { 
+                          whileHover={isCurrentQuestionAnswered() ? {
                             scale: 1.02,
-                            boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)'
+                            boxShadow: '0 4px 12px rgba(15, 23, 42, 0.25)'
                           } : {}}
                           whileTap={isCurrentQuestionAnswered() ? { scale: 0.98 } : {}}
                           onClick={analyzeStrategy}
                           disabled={!isCurrentQuestionAnswered()}
                           style={{
-                            padding: '0.75rem 1.75rem',
+                            padding: isMobile ? '0.625rem 1.25rem' : '0.75rem 1.75rem',
                             background: isCurrentQuestionAnswered()
-                              ? 'var(--color-primary)'
+                              ? 'var(--color-secondary)'
                               : 'rgba(0, 0, 0, 0.05)',
                             color: isCurrentQuestionAnswered() ? 'white' : 'var(--text-on-light-muted)',
                             border: 'none',
                             borderRadius: '8px',
                             fontWeight: '600',
-                            fontSize: '0.9375rem',
+                            fontSize: isMobile ? '0.8125rem' : '0.9375rem',
                             cursor: isCurrentQuestionAnswered() ? 'pointer' : 'not-allowed',
                             display: 'flex',
                             alignItems: 'center',
                             gap: '0.5rem',
                             boxShadow: isCurrentQuestionAnswered()
-                              ? '0 2px 8px rgba(30, 64, 175, 0.2)'
+                              ? '0 2px 8px rgba(15, 23, 42, 0.2)'
                               : 'none',
                             transition: 'all 0.2s ease',
+                            fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                           }}
                         >
-                          Get Recommendation
+                          {isMobile ? 'Get Result' : 'Get Recommendation'}
                           <svg
                             width="18"
                             height="18"
@@ -1180,9 +1190,9 @@ const EnhancedAIStrategyAnalyzer = () => {
                         </motion.button>
                       ) : (
                         <motion.button
-                          whileHover={isCurrentQuestionAnswered() ? { 
+                          whileHover={isCurrentQuestionAnswered() ? {
                             scale: 1.02,
-                            boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)'
+                            boxShadow: '0 4px 12px rgba(15, 23, 42, 0.25)'
                           } : {}}
                           whileTap={isCurrentQuestionAnswered() ? { scale: 0.98 } : {}}
                           onClick={() => isCurrentQuestionAnswered() && setCurrentQuestion(currentQuestion + 1)}
@@ -1190,7 +1200,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                           style={{
                             padding: '0.75rem 1.75rem',
                             background: isCurrentQuestionAnswered()
-                              ? 'var(--color-primary)'
+                              ? 'var(--color-secondary)'
                               : 'rgba(0, 0, 0, 0.05)',
                             color: isCurrentQuestionAnswered() ? 'white' : 'var(--text-on-light-muted)',
                             border: 'none',
@@ -1202,9 +1212,10 @@ const EnhancedAIStrategyAnalyzer = () => {
                             alignItems: 'center',
                             gap: '0.5rem',
                             boxShadow: isCurrentQuestionAnswered()
-                              ? '0 2px 8px rgba(30, 64, 175, 0.2)'
+                              ? '0 2px 8px rgba(15, 23, 42, 0.2)'
                               : 'none',
                             transition: 'all 0.2s ease',
+                            fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                           }}
                         >
                           Next
@@ -1235,7 +1246,9 @@ const EnhancedAIStrategyAnalyzer = () => {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  background: 'rgba(0, 0, 0, 0.85)',
+                  background: 'rgba(15, 23, 42, 0.75)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -1317,9 +1330,9 @@ const EnhancedAIStrategyAnalyzer = () => {
                           scale: [1, 1.2, 1],
                           opacity: [0.7, 1, 0.7],
                           boxShadow: [
-                            '0 0 20px rgba(77, 141, 218, 0.5)',
-                            '0 0 40px rgba(77, 141, 218, 0.8)',
-                            '0 0 20px rgba(77, 141, 218, 0.5)'
+                            '0 0 20px rgba(15, 23, 42, 0.5)',
+                            '0 0 40px rgba(15, 23, 42, 0.8)',
+                            '0 0 20px rgba(15, 23, 42, 0.5)'
                           ]
                         }}
                         transition={{
@@ -1334,7 +1347,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                           width: '30px',
                           height: '30px',
                           borderRadius: '50%',
-                          backgroundColor: '#4D8DDA',
+                          backgroundColor: 'var(--color-secondary)',
                           transform: 'translate(-50%, -50%)',
                           zIndex: 1,
                         }}
@@ -1369,7 +1382,8 @@ const EnhancedAIStrategyAnalyzer = () => {
                               width: '6px',
                               height: '6px',
                               borderRadius: '50%',
-                              backgroundColor: i % 2 === 0 ? '#4D8DDA' : '#E5A244',
+                              backgroundColor: 'var(--color-secondary)',
+                              opacity: i % 2 === 0 ? 1 : 0.6,
                               transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
                             }}
                           />
@@ -1391,7 +1405,8 @@ const EnhancedAIStrategyAnalyzer = () => {
                         fontWeight: 'bold',
                         marginBottom: '1rem',
                         textAlign: 'center',
-                        color: 'white',
+                        color: 'var(--text-on-dark)',
+                        fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                       }}
                     >
                       Analyzing Your Business Context
@@ -1400,9 +1415,10 @@ const EnhancedAIStrategyAnalyzer = () => {
                     <p style={{
                       fontSize: '1rem',
                       textAlign: 'center',
-                      color: 'var(--text-on-light-muted)',
+                      color: 'var(--text-on-dark-muted)',
                       marginBottom: '2rem',
                       lineHeight: 1.6,
+                      fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                     }}>
                       Our AI is evaluating market conditions, competitive landscapes, and organizational
                       factors to formulate the optimal strategic approach for your situation.
@@ -1448,11 +1464,14 @@ const EnhancedAIStrategyAnalyzer = () => {
                               width: '8px',
                               height: '8px',
                               borderRadius: '50%',
-                              backgroundColor: '#4D8DDA',
+                              backgroundColor: 'var(--color-secondary)',
                               marginRight: '1rem',
                             }}
                           />
-                          <span style={{ color: 'var(--text-on-light)' }}>
+                          <span style={{
+                            color: 'var(--text-on-dark)',
+                            fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+                          }}>
                             {stage.text}
                           </span>
                         </motion.div>
@@ -1463,145 +1482,99 @@ const EnhancedAIStrategyAnalyzer = () => {
               )}
             </div>
           ) : (
-            <div style={{ 
-              padding: isMobile ? '2rem 1rem' : '4rem 0',
-              position: 'relative',
-            }}>
+            <>
               {/* Background lines for result page */}
-              {!isMobile ? (
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    zIndex: 0,
-                    pointerEvents: 'none',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    gap: '24px',
-                    padding: '4rem 0',
-                  }}
-                >
-                  {Array.from({ length: 32 }).map((_, i) => {
-                    const depth = i % 4;
-                    const lineOpacity = 0.08 + depth * 0.03;
+              <div
+                    style={{
+                        position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  width: '100vw',
+                  marginLeft: '50%',
+                  transform: 'translateX(-50%)',
+                  bottom: 0,
+                        zIndex: 0,
+                  pointerEvents: 'none',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: isMobile ? 'flex-start' : 'center',
+                  gap: isMobile ? '20px' : '24px',
+                  padding: isMobile ? '2rem 0' : '4rem 0',
+                  minHeight: '100%',
+                }}
+              >
+                {Array.from({ length: isMobile ? 25 : 32 }).map((_, i) => {
+                  const depth = i % 4;
+                  const lineOpacity = isMobile ? 0.08 : 0.08 + depth * 0.03;
 
-                    const centerIndex = 16;
-                    const distanceFromCenter = Math.abs(i - centerIndex);
-                    const maxDistance = centerIndex;
+                  const centerIndex = isMobile ? 12.5 : 16;
+                  const distanceFromCenter = Math.abs(i - centerIndex);
+                  const maxDistance = centerIndex;
 
-                    const lineWidthPercent = 8 + (distanceFromCenter / maxDistance) * 18;
-                    const centerGapPercent = 100 - (lineWidthPercent * 2);
-                    const offset = depth % 2 === 0 ? 15 : -15;
+                  const lineWidthPercent = isMobile 
+                    ? 15 + (distanceFromCenter / maxDistance) * 18
+                    : 8 + (distanceFromCenter / maxDistance) * 18;
+                  const centerGapPercent = isMobile 
+                    ? Math.max(30, 100 - (lineWidthPercent * 2))
+                    : 100 - (lineWidthPercent * 2);
+                  const offset = isMobile ? 0 : (depth % 2 === 0 ? 15 : -15);
+                  const lineHeight = isMobile ? '1px' : '1.5px';
 
-                    return (
-                      <div
-                        key={`result-line-${i}`}
+                  return (
+                    <div
+                      key={`result-line-${i}`}
                         style={{
-                          width: '100%',
-                          height: '1.5px',
-                          position: 'relative',
+                        width: '100%',
+                        height: lineHeight,
+                        position: 'relative',
                           display: 'flex',
-                          justifyContent: 'space-between',
+                        justifyContent: 'space-between',
                           alignItems: 'center',
                         }}
                       >
-                        <div
-                          style={{
-                            width: `${lineWidthPercent}%`,
-                            height: '1.5px',
-                            background: `linear-gradient(90deg, transparent 0%, rgba(30, 64, 175, ${lineOpacity * 0.5}) 30%, rgba(30, 64, 175, ${lineOpacity}) 70%, rgba(30, 64, 175, ${lineOpacity * 1.2}) 100%)`,
-                            borderRadius: '2px',
-                            transform: `translateX(${offset}px)`,
-                            opacity: 0.7 + depth * 0.1,
-                          }}
-                        />
-                        <div style={{ width: `${centerGapPercent}%`, height: '1.5px' }} />
-                        <div
-                          style={{
-                            width: `${lineWidthPercent}%`,
-                            height: '1.5px',
-                            background: `linear-gradient(90deg, rgba(30, 64, 175, ${lineOpacity * 1.2}) 0%, rgba(30, 64, 175, ${lineOpacity}) 30%, rgba(30, 64, 175, ${lineOpacity * 0.5}) 70%, transparent 100%)`,
-                            borderRadius: '2px',
-                            transform: `translateX(${-offset}px)`,
-                            opacity: 0.7 + depth * 0.1,
-                          }}
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
-              ) : (
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    zIndex: 0,
-                    pointerEvents: 'none',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'flex-start',
-                    gap: '20px',
-                    padding: '2rem 0.5rem',
-                    minHeight: '100%',
-                  }}
-                >
-                  {Array.from({ length: 25 }).map((_, i) => {
-                    const lineOpacity = 0.08;
-                    const centerIndex = 12.5;
-                    const distanceFromCenter = Math.abs(i - centerIndex);
-                    const maxDistance = centerIndex;
-                    const lineWidthPercent = 15 + (distanceFromCenter / maxDistance) * 18;
-                    const centerGapPercent = Math.max(30, 100 - (lineWidthPercent * 2));
-
-                    return (
                       <div
-                        key={`result-mobile-line-${i}`}
-                        style={{
-                          width: '100%',
-                          height: '1px',
-                          position: 'relative',
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center',
+                          style={{
+                          width: `${lineWidthPercent}%`,
+                          height: lineHeight,
+                          background: isMobile
+                            ? `linear-gradient(90deg, transparent 0%, rgba(15, 23, 42, ${lineOpacity}) 50%, rgba(15, 23, 42, ${lineOpacity * 1.5}) 100%)`
+                            : `linear-gradient(90deg, transparent 0%, rgba(15, 23, 42, ${lineOpacity * 0.5}) 30%, rgba(15, 23, 42, ${lineOpacity}) 70%, rgba(15, 23, 42, ${lineOpacity * 1.2}) 100%)`,
+                          borderRadius: isMobile ? '1px' : '2px',
+                          transform: offset !== 0 ? `translateX(${offset}px)` : 'none',
+                          opacity: isMobile ? 1 : (0.7 + depth * 0.1),
                         }}
-                      >
-                        <div
+                      />
+                      <div style={{ width: `${centerGapPercent}%`, height: lineHeight }} />
+                      <div
                           style={{
-                            width: `${lineWidthPercent}%`,
-                            height: '1px',
-                            background: `linear-gradient(90deg, transparent 0%, rgba(30, 64, 175, ${lineOpacity}) 50%, rgba(30, 64, 175, ${lineOpacity * 1.5}) 100%)`,
-                            borderRadius: '1px',
-                          }}
-                        />
-                        <div style={{ width: `${centerGapPercent}%`, height: '1px' }} />
-                        <div
-                          style={{
-                            width: `${lineWidthPercent}%`,
-                            height: '1px',
-                            background: `linear-gradient(90deg, rgba(30, 64, 175, ${lineOpacity * 1.5}) 0%, rgba(30, 64, 175, ${lineOpacity}) 50%, transparent 100%)`,
-                            borderRadius: '1px',
-                          }}
-                        />
+                          width: `${lineWidthPercent}%`,
+                          height: lineHeight,
+                          background: isMobile
+                            ? `linear-gradient(90deg, rgba(15, 23, 42, ${lineOpacity * 1.5}) 0%, rgba(15, 23, 42, ${lineOpacity}) 50%, transparent 100%)`
+                            : `linear-gradient(90deg, rgba(15, 23, 42, ${lineOpacity * 1.2}) 0%, rgba(15, 23, 42, ${lineOpacity}) 30%, rgba(15, 23, 42, ${lineOpacity * 0.5}) 70%, transparent 100%)`,
+                          borderRadius: isMobile ? '1px' : '2px',
+                          transform: offset !== 0 ? `translateX(${-offset}px)` : 'none',
+                          opacity: isMobile ? 1 : (0.7 + depth * 0.1),
+                        }}
+                      />
                       </div>
-                    );
-                  })}
-                </div>
-              )}
-              
-              <AnimatePresence>
+                  );
+                })}
+                    </div>
+
+                    <div style={{
+                padding: isMobile ? '2rem 1rem' : '4rem 0',
+                position: 'relative',
+                zIndex: 1,
+                    }}>
+                <AnimatePresence>
                 {result && (
-                  <motion.div
+                      <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5 }}
-                    style={{
+                        style={{
                       maxWidth: '1000px',
                       margin: '0 auto',
                       position: 'relative',
@@ -1618,26 +1591,27 @@ const EnhancedAIStrategyAnalyzer = () => {
                         marginBottom: '4rem',
                         paddingBottom: '3rem',
                         borderBottom: '2px solid rgba(0, 0, 0, 0.06)',
-                      }}
-                    >
+                        }}
+                      >
                       <div style={{
                         display: 'inline-block',
                         padding: '0.5rem 1.25rem',
-                        backgroundColor: 'var(--color-primary-light)',
+                        backgroundColor: 'var(--color-secondary-light)',
                         borderRadius: '20px',
-                        marginBottom: '1.5rem',
-                      }}>
-                        <span style={{
+                          marginBottom: '1.5rem',
+                        }}>
+                          <span style={{
                           fontSize: '0.8125rem',
                           fontWeight: '600',
-                          color: 'var(--color-primary)',
+                          color: 'var(--color-secondary)',
                           textTransform: 'uppercase',
                           letterSpacing: '0.1em',
+                          fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                         }}>
                           Recommended Package
-                        </span>
+                          </span>
                       </div>
-                      
+
                       <h2 style={{
                         fontSize: isMobile ? '2rem' : '3rem',
                         fontWeight: '700',
@@ -1648,7 +1622,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                       }}>
                         {safeResult?.name || 'Service Package'}
                       </h2>
-                      
+
                       <p style={{
                         fontSize: isMobile ? '1.125rem' : '1.375rem',
                         color: 'var(--text-on-light-muted)',
@@ -1656,6 +1630,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                         maxWidth: '750px',
                         margin: '0 auto',
                         fontWeight: '400',
+                        fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                       }}>
                         {safeResult?.description || 'A comprehensive service package tailored to your needs.'}
                       </p>
@@ -1681,7 +1656,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                           color: 'var(--text-on-light)',
                           fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                           paddingBottom: '1rem',
-                          borderBottom: '2px solid var(--color-primary)',
+                          borderBottom: '2px solid var(--color-secondary)',
                           display: 'inline-block',
                         }}>
                           Project Overview
@@ -1706,7 +1681,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                                 gap: '0.5rem',
                                 padding: '1.25rem',
                                 borderRadius: '12px',
-                                backgroundColor: 'var(--color-primary-light)',
+                                backgroundColor: 'var(--color-secondary-light)',
                               }}
                             >
                               <span style={{
@@ -1715,6 +1690,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                                 fontWeight: '500',
                                 textTransform: 'uppercase',
                                 letterSpacing: '0.05em',
+                                fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                               }}>
                                 {item.label}
                               </span>
@@ -1722,6 +1698,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                                 fontSize: '1.0625rem',
                                 fontWeight: '600',
                                 color: 'var(--text-on-light)',
+                                fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                               }}>
                                 {item.value}
                               </span>
@@ -1743,7 +1720,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                           color: 'var(--text-on-light)',
                           fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                           paddingBottom: '1rem',
-                          borderBottom: '2px solid var(--color-primary)',
+                          borderBottom: '2px solid var(--color-secondary)',
                           display: 'inline-block',
                         }}>
                           Assessment
@@ -1756,27 +1733,28 @@ const EnhancedAIStrategyAnalyzer = () => {
                           <div style={{
                             padding: '1.5rem',
                             borderRadius: '12px',
-                            backgroundColor: 'var(--color-primary-light)',
-                            borderLeft: '4px solid var(--color-primary)',
+                            backgroundColor: 'var(--color-secondary-light)',
+                            borderLeft: '4px solid var(--color-secondary)',
                           }}>
                             <h4 style={{
-                              fontSize: '1rem',
+                            fontSize: '1rem',
                               fontWeight: '700',
                               color: 'var(--text-on-light)',
                               marginBottom: '0.75rem',
                               fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                             }}>
-                              Strengths
+                            Strengths
                             </h4>
-                            <p style={{
+                          <p style={{
                               fontSize: '1rem',
                               color: 'var(--text-on-light)',
                               lineHeight: 1.7,
                               margin: 0,
-                            }}>
+                              fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+                          }}>
                               {safeResult?.strengths || 'Comprehensive solution tailored to your needs.'}
-                            </p>
-                          </div>
+                          </p>
+                        </div>
 
                           <div style={{
                             padding: '1.5rem',
@@ -1785,22 +1763,23 @@ const EnhancedAIStrategyAnalyzer = () => {
                             borderLeft: '4px solid var(--text-on-light-muted)',
                           }}>
                             <h4 style={{
-                              fontSize: '1rem',
+                            fontSize: '1rem',
                               fontWeight: '700',
                               color: 'var(--text-on-light)',
                               marginBottom: '0.75rem',
                               fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                             }}>
-                              Considerations
+                            Considerations
                             </h4>
-                            <p style={{
+                          <p style={{
                               fontSize: '1rem',
                               color: 'var(--text-on-light)',
                               lineHeight: 1.7,
                               margin: 0,
-                            }}>
+                              fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+                          }}>
                               {safeResult?.weaknesses || 'May require phased implementation.'}
-                            </p>
+                          </p>
                           </div>
                         </div>
                       </motion.div>
@@ -1822,7 +1801,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                         color: 'var(--text-on-light)',
                         fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                         paddingBottom: '1rem',
-                        borderBottom: '2px solid var(--color-primary)',
+                        borderBottom: '2px solid var(--color-secondary)',
                         display: 'inline-block',
                       }}>
                         Implementation Steps
@@ -1862,7 +1841,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                                 width: '32px',
                                 height: '32px',
                                 borderRadius: '8px',
-                                backgroundColor: 'var(--color-primary)',
+                                backgroundColor: 'var(--color-secondary)',
                                 color: 'white',
                                 display: 'flex',
                                 alignItems: 'center',
@@ -1880,6 +1859,7 @@ const EnhancedAIStrategyAnalyzer = () => {
                                 margin: 0,
                                 flex: 1,
                                 fontWeight: '500',
+                                fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                               }}>
                                 {move}
                               </p>
@@ -1902,62 +1882,65 @@ const EnhancedAIStrategyAnalyzer = () => {
                         paddingTop: '2rem',
                         borderTop: '1px solid rgba(0, 0, 0, 0.06)',
                       }}
-                    >
-                      <motion.button
+                      >
+                        <motion.button
                         whileHover={{ opacity: 0.8 }}
                         whileTap={{ scale: 0.98 }}
-                        onClick={resetAnalyzer}
-                        style={{
+                          onClick={resetAnalyzer}
+                          style={{
                           padding: '0.875rem 1.5rem',
-                          background: 'transparent',
+                            background: 'transparent',
                           border: '1px solid rgba(0, 0, 0, 0.1)',
-                          borderRadius: '8px',
+                            borderRadius: '8px',
                           color: 'var(--text-on-light)',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
                           gap: '0.5rem',
                           fontWeight: '500',
                           fontSize: '0.9375rem',
                           transition: 'all 0.2s ease',
-                        }}
-                      >
+                          fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+                          }}
+                        >
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M3 2v6h6"></path>
-                          <path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path>
-                        </svg>
-                        Try Again
-                      </motion.button>
+                            <path d="M3 2v6h6"></path>
+                            <path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path>
+                          </svg>
+                          Try Again
+                        </motion.button>
 
-                      <motion.button
-                        whileHover={{ scale: 1.02, boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)' }}
+                        <motion.button
+                        whileHover={{ scale: 1.02, boxShadow: '0 4px 12px rgba(15, 23, 42, 0.25)' }}
                         whileTap={{ scale: 0.98 }}
-                        style={{
+                          style={{
                           padding: '0.875rem 1.75rem',
-                          background: 'var(--color-primary)',
-                          color: 'white',
-                          border: 'none',
-                          borderRadius: '8px',
+                          background: 'var(--color-secondary)',
+                            color: 'white',
+                            border: 'none',
+                            borderRadius: '8px',
                           fontWeight: '600',
                           fontSize: '0.9375rem',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
                           gap: '0.5rem',
-                          boxShadow: '0 2px 8px rgba(30, 64, 175, 0.2)',
+                          boxShadow: '0 2px 8px rgba(15, 23, 42, 0.2)',
                           transition: 'all 0.2s ease',
-                        }}
-                      >
-                        Schedule Consultation
+                          fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+                          }}
+                        >
+                          Schedule Consultation
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                      </motion.button>
+                          </svg>
+                        </motion.button>
                     </motion.div>
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
+            </>
           )}
         </motion.div>
       </div>
