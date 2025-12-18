@@ -217,7 +217,6 @@ const ChessGrandmastersTeam = () => {
           opacity: 1,
           duration: 0.6,
           delay: index * 0.1 + 0.5,
-          ease: "power2.out",
         });
       }
     });
@@ -699,7 +698,6 @@ const ChessGrandmastersTeam = () => {
                   transition={{
                     duration: 0.6,
                     delay: index * 0.1 + 0.5,
-                    ease: "power2.out",
                   }}
                   style={{
                     display: 'flex',
