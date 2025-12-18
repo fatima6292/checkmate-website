@@ -21,8 +21,8 @@ const ChessFaqAccordion = () => {
   const faqItems = [
     {
       id: 1,
-      question: "What services does Cypentra.dev offer?",
-      answer: "Cypentra.dev offers a comprehensive range of software services including Full-Stack Development, Software Engineering, DevOps & Cloud solutions, Security & Compliance, AI & Machine Learning integration, and Process Automation. Our team specializes in creating custom solutions tailored to your specific business needs with modern architecture and security-first implementation.",
+      question: "What services does cypentra.dev offer?",
+      answer: "cypentra.dev offers a comprehensive range of software services including Full-Stack Development, Software Engineering, DevOps & Cloud solutions, Security & Compliance, AI & Machine Learning integration, and Process Automation. Our team specializes in creating custom solutions tailored to your specific business needs with modern architecture and security-first implementation.",
       icon: "code",
       color: "var(--color-primary)"
     },
@@ -49,8 +49,8 @@ const ChessFaqAccordion = () => {
     },
     {
       id: 5,
-      question: "What makes Cypentra.dev different from other agencies?",
-      answer: "Cypentra.dev combines strategic thinking with deep technical expertise. We focus on quality-driven, secure software with extensive customization and long-term maintainability. Our approach isn't just about coding; it's about creating digital assets that provide real business value, drive growth, and adapt to your evolving needs.",
+      question: "What makes cypentra.dev different from other agencies?",
+      answer: "cypentra.dev combines strategic thinking with deep technical expertise. We focus on quality-driven, secure software with extensive customization and long-term maintainability. Our approach isn't just about coding; it's about creating digital assets that provide real business value, drive growth, and adapt to your evolving needs.",
       icon: "star",
       color: "var(--color-primary)"
     },
@@ -287,7 +287,7 @@ const ChessFaqAccordion = () => {
                   fontWeight: 700,
                   fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                 }}>
-                  Why Cypentra.dev?
+                  Why cypentra.dev?
                 </h4>
               </div>
               <p style={{

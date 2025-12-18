@@ -42,7 +42,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata = {
-  title: "Cypentra.dev - Software Development & Cloud Solutions",
+  title: "cypentra.dev - Software Development & Cloud Solutions",
   description: "Transform your digital vision with innovative software solutions, full-stack development, and cloud security services.",
   icons: {
     icon: '/favicon.ico',

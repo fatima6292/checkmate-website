@@ -178,7 +178,7 @@ const ChessFooter = () => {
                 >
                   <img
                     src="/logo.png"
-                    alt="Cypentra.dev"
+                    alt="cypentra.dev"
                     style={{
                       height: '56px',
                       width: 'auto',
@@ -382,7 +382,7 @@ const ChessFooter = () => {
             margin: 0,
             fontFamily: "var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif",
           }}>
-            © {new Date().getFullYear()} Cypentra.dev. All rights reserved.
+            © {new Date().getFullYear()} cypentra.dev. All rights reserved.
           </p>
 
           <div

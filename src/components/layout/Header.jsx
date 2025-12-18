@@ -161,7 +161,7 @@ const Header = () => {
               >
                 <img
                   src="/logo.png"
-                  alt="Cypentra.dev"
+                  alt="cypentra.dev"
                   style={{
                     height: isScrolled ? '48px' : '56px',
                     width: 'auto',
