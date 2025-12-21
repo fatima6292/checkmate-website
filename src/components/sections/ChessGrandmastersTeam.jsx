@@ -10,7 +10,7 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const ChessGrandmastersTeam = () => {
+const ChessGrandmastersTeam = ({ hideHeader = false }) => {
   const sectionRef = useRef(null);
   const [hoveredMember, setHoveredMember] = useState(null);
   const [screenSize, setScreenSize] = useState('desktop');
@@ -360,47 +360,49 @@ const ChessGrandmastersTeam = () => {
         boxSizing: 'border-box',
       }}>
         {/* Header */}
-        <div className="team-header" style={{
-          textAlign: 'center',
-          marginBottom: isMobile ? '2rem' : isTablet ? '3rem' : '4rem',
-          padding: isMobile ? '0 0.5rem' : '0',
-        }}>
-          <motion.h6
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            style={{
-              fontSize: isMobile ? '0.75rem' : isTablet ? '0.875rem' : '1rem',
-              fontWeight: 700,
-              color: 'var(--color-primary)',
-              textTransform: 'uppercase',
-              letterSpacing: '2px',
-              marginBottom: isMobile ? '0.75rem' : '1rem',
-              fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
-              textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)',
-            }}
-          >
-            Our Team
-          </motion.h6>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            style={{
-              fontSize: isMobile ? '2rem' : isTablet ? '2.75rem' : '3.75rem',
-              marginBottom: isMobile ? '1rem' : '1.5rem',
-              color: '#0F172A',
-              fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
-              fontWeight: 700,
-              lineHeight: 1.2,
-              textShadow: '0 2px 4px rgba(255, 255, 255, 0.5)',
-            }}
-          >
-            Meet our team
-          </motion.h1>
-        </div>
+        {!hideHeader && (
+          <div className="team-header" style={{
+            textAlign: 'center',
+            marginBottom: isMobile ? '2rem' : isTablet ? '3rem' : '4rem',
+            padding: isMobile ? '0 0.5rem' : '0',
+          }}>
+            <motion.h6
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              style={{
+                fontSize: isMobile ? '0.75rem' : isTablet ? '0.875rem' : '1rem',
+                fontWeight: 700,
+                color: 'var(--color-primary)',
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+                marginBottom: isMobile ? '0.75rem' : '1rem',
+                fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+                textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)',
+              }}
+            >
+              Our Team
+            </motion.h6>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              style={{
+                fontSize: isMobile ? '2rem' : isTablet ? '2.75rem' : '3.75rem',
+                marginBottom: isMobile ? '1rem' : '1.5rem',
+                color: '#0F172A',
+                fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
+                fontWeight: 700,
+                lineHeight: 1.2,
+                textShadow: '0 2px 4px rgba(255, 255, 255, 0.5)',
+              }}
+            >
+              Meet our team
+            </motion.h1>
+          </div>
+        )}
 
         {isMobile ? (
           /* Mobile: One image-card pair at a time */
@@ -430,10 +432,10 @@ const ChessGrandmastersTeam = () => {
                 >
                   <div
                     style={{
-                      width: 120,
-                      height: 120,
+                      width: isMobile ? 200 : 120,
+                      height: isMobile ? 200 : 120,
                       borderRadius: '50%',
-                      padding: '4px',
+                      padding: isMobile ? '6px' : '4px',
                       backgroundColor: '#ffffff',
                       border: `4px solid ${teamMembers[activeMobileIndex].color}`,
                       boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
@@ -503,6 +505,8 @@ const ChessGrandmastersTeam = () => {
                     color: teamMembers[activeMobileIndex].color,
                     marginBottom: '0.5rem',
                     fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+                    wordWrap: 'break-word',
+                    overflowWrap: 'break-word',
                   }}
                 >
                   {teamMembers[activeMobileIndex].name.toUpperCase()}
@@ -514,6 +518,8 @@ const ChessGrandmastersTeam = () => {
                   color: 'var(--text-on-light-muted)',
                   marginBottom: '1rem',
                   fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+                  wordWrap: 'break-word',
+                  overflowWrap: 'break-word',
                 }}>
                   {teamMembers[activeMobileIndex].position}
                 </p>
@@ -531,6 +537,8 @@ const ChessGrandmastersTeam = () => {
                   fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                   opacity: 0.8,
                   width: '100%',
+                  wordWrap: 'break-word',
+                  overflowWrap: 'break-word',
                 }}>
                   {teamMembers[activeMobileIndex].description}
                 </p>

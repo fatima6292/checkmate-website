@@ -10,7 +10,7 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const Timeline = () => {
+const Timeline = ({ hideHeader = false }) => {
   const timelineRef = useRef(null);
   const [activeItem, setActiveItem] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -497,7 +497,9 @@ const Timeline = () => {
       ref={timelineRef}
       className="chess-timeline-section"
       style={{
-        padding: isMobile ? '3rem 0' : '100px 0',
+        padding: hideHeader
+          ? (isMobile ? '0 0 3rem' : '0 0 100px')
+          : (isMobile ? '3rem 0' : '100px 0'),
         backgroundColor: '#ffffff',
         backgroundImage: 'url(/formbg.png)',
         backgroundSize: 'auto',
@@ -526,48 +528,50 @@ const Timeline = () => {
         position: 'relative',
         zIndex: 3,
       }}>
-        <div className="section-header" style={{
-          textAlign: 'center',
-          marginBottom: isMobile ? '2.5rem' : '5rem',
-        }}>
-          <h6 style={{
-            fontSize: isMobile ? '0.875rem' : '1rem',
-            fontWeight: 700,
-            color: 'var(--color-primary)',
-            textTransform: 'uppercase',
-            letterSpacing: '2px',
-            marginBottom: '1rem',
-            fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
-            textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)',
+        {!hideHeader && (
+          <div className="section-header" style={{
+            textAlign: 'center',
+            marginBottom: isMobile ? '2.5rem' : '5rem',
           }}>
-            Our Process
-          </h6>
-          <h2 style={{
-            fontSize: isMobile ? '1.75rem' : '2.8rem',
-            fontWeight: 700,
-            marginBottom: '1.5rem',
-            color: '#0F172A',
-            lineHeight: 1.2,
-            fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
-            textShadow: '0 2px 4px rgba(255, 255, 255, 0.5)',
-          }}>
-            From Concept to Deployment
-          </h2>
-          <p style={{
-            fontSize: isMobile ? '1rem' : '1.2rem',
-            maxWidth: '700px',
-            margin: '0 auto',
-            color: '#1A202C',
-            lineHeight: 1.6,
-            padding: isMobile ? '0 0.5rem' : '0',
-            fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
-            fontWeight: 500,
-            textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)',
-          }}>
-            Our proven development process ensures your project is delivered on time,
-            within budget, and built to scale with your business needs.
-          </p>
-        </div>
+            <h6 style={{
+              fontSize: isMobile ? '0.875rem' : '1rem',
+              fontWeight: 700,
+              color: 'var(--color-primary)',
+              textTransform: 'uppercase',
+              letterSpacing: '2px',
+              marginBottom: '1rem',
+              fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+              textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)',
+            }}>
+              Our Process
+            </h6>
+            <h2 style={{
+              fontSize: isMobile ? '1.75rem' : '2.8rem',
+              fontWeight: 700,
+              marginBottom: '1.5rem',
+              color: '#0F172A',
+              lineHeight: 1.2,
+              fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
+              textShadow: '0 2px 4px rgba(255, 255, 255, 0.5)',
+            }}>
+              From Concept to Deployment
+            </h2>
+            <p style={{
+              fontSize: isMobile ? '1rem' : '1.2rem',
+              maxWidth: '700px',
+              margin: '0 auto',
+              color: '#1A202C',
+              lineHeight: 1.6,
+              padding: isMobile ? '0 0.5rem' : '0',
+              fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+              fontWeight: 500,
+              textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)',
+            }}>
+              Our proven development process ensures your project is delivered on time,
+              within budget, and built to scale with your business needs.
+            </p>
+          </div>
+        )}
 
         {/* Vertical timeline with progress indicator */}
         <div className="timeline-container" style={{
