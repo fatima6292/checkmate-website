@@ -3,20 +3,20 @@
 import React from 'react';
 import Header from '@/components/layout/Header';
 import ChessFooter from '@/components/layout/ChessFooter';
-import ProcessAutomationHero from '@/components/sections/ProcessAutomationHero';
+import DataSecurityComplianceHero from '@/components/sections/DataSecurityComplianceHero';
 import { motion } from 'framer-motion';
 
-export default function ProcessAutomationPage() {
+export default function DataSecurityCompliancePage() {
   return (
     <>
       <Header />
       <main style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
         {/* Hero Section */}
-        <ProcessAutomationHero />
+        <DataSecurityComplianceHero />
 
         {/* Features Section */}
         <section
-          className="process-automation-services-section"
+          className="data-security-services-section"
           style={{
             padding: '100px 0',
             backgroundImage: 'url(/formbg.png)',
@@ -69,12 +69,12 @@ export default function ProcessAutomationPage() {
                   fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                 }}
               >
-                Our Process Automation Services
+                Our Data Security & Compliance Services
               </h2>
             </motion.div>
 
             <div
-              className="process-automation-services-grid"
+              className="data-security-services-grid"
               style={{
                 display: 'grid',
                 gridTemplateColumns: '1fr 1fr',
@@ -82,7 +82,7 @@ export default function ProcessAutomationPage() {
                 rowGap: '4rem',
               }}
             >
-              {/* Workflow Automation Column */}
+              {/* Security Assessment Column */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -106,7 +106,7 @@ export default function ProcessAutomationPage() {
                 >
                   <img
                     src="/images/Services/Full-stack-service/frontend.png"
-                    alt="Workflow Automation"
+                    alt="Security Assessment"
                     style={{
                       width: '100%',
                       height: '100%',
@@ -124,7 +124,7 @@ export default function ProcessAutomationPage() {
                     fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                   }}
                 >
-                  Workflow Automation
+                  Security Assessment
                 </h3>
                 <p
                   style={{
@@ -135,7 +135,7 @@ export default function ProcessAutomationPage() {
                     fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                   }}
                 >
-                  Automate complex business workflows and processes. Reduce manual tasks, eliminate errors, and improve efficiency across your organization with intelligent automation solutions.
+                  Comprehensive security audits and vulnerability assessments to identify risks and weaknesses in your infrastructure. We evaluate your systems, networks, and applications to ensure robust protection against threats.
                 </p>
                 <motion.a
                   href="#"
@@ -169,7 +169,7 @@ export default function ProcessAutomationPage() {
                 </motion.a>
               </motion.div>
 
-              {/* RPA Solutions Column */}
+              {/* Compliance Management Column */}
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -193,7 +193,7 @@ export default function ProcessAutomationPage() {
                 >
                   <img
                     src="/images/Services/Full-stack-service/frontend.png"
-                    alt="RPA Solutions"
+                    alt="Compliance Management"
                     style={{
                       width: '100%',
                       height: '100%',
@@ -211,7 +211,7 @@ export default function ProcessAutomationPage() {
                     fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                   }}
                 >
-                  RPA Solutions
+                  Compliance Management
                 </h3>
                 <p
                   style={{
@@ -222,7 +222,7 @@ export default function ProcessAutomationPage() {
                     fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                   }}
                 >
-                  Implement Robotic Process Automation to handle repetitive tasks. Bots that work 24/7, never make mistakes, and free your team for strategic work that drives business value.
+                  Ensure adherence to GDPR, HIPAA, SOC 2, ISO 27001, and other regulatory standards. We help you implement compliance frameworks, conduct audits, and maintain ongoing compliance with industry regulations.
                 </p>
                 <motion.a
                   href="#"
@@ -256,7 +256,7 @@ export default function ProcessAutomationPage() {
                 </motion.a>
               </motion.div>
 
-              {/* Business Process Integration Column */}
+              {/* Data Encryption Column */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -280,7 +280,7 @@ export default function ProcessAutomationPage() {
                 >
                   <img
                     src="/images/Services/Full-stack-service/frontend.png"
-                    alt="Business Process Integration"
+                    alt="Data Encryption"
                     style={{
                       width: '100%',
                       height: '100%',
@@ -298,7 +298,7 @@ export default function ProcessAutomationPage() {
                     fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                   }}
                 >
-                  Business Process Integration
+                  Data Encryption
                 </h3>
                 <p
                   style={{
@@ -309,7 +309,7 @@ export default function ProcessAutomationPage() {
                     fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                   }}
                 >
-                  Connect disparate systems and applications seamlessly. Enable data flow between platforms and create unified business processes that eliminate silos and improve collaboration.
+                  Implement end-to-end encryption for data at rest and in transit. Protect sensitive information with advanced encryption technologies and key management solutions that meet industry standards.
                 </p>
                 <motion.a
                   href="#"
@@ -343,7 +343,7 @@ export default function ProcessAutomationPage() {
                 </motion.a>
               </motion.div>
 
-              {/* Task Scheduling Column */}
+              {/* Access Control Column */}
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -367,7 +367,7 @@ export default function ProcessAutomationPage() {
                 >
                   <img
                     src="/images/Services/Full-stack-service/frontend.png"
-                    alt="Task Scheduling"
+                    alt="Access Control"
                     style={{
                       width: '100%',
                       height: '100%',
@@ -385,7 +385,7 @@ export default function ProcessAutomationPage() {
                     fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                   }}
                 >
-                  Task Scheduling
+                  Access Control
                 </h3>
                 <p
                   style={{
@@ -396,7 +396,7 @@ export default function ProcessAutomationPage() {
                     fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                   }}
                 >
-                  Automate scheduled tasks and jobs. Run processes at optimal times, handle batch operations, and ensure critical tasks never get missed with intelligent scheduling systems.
+                  Implement robust access control and identity management systems. Multi-factor authentication, role-based access control, and privileged access management to secure your digital assets.
                 </p>
                 <motion.a
                   href="#"
@@ -471,13 +471,13 @@ export default function ProcessAutomationPage() {
                   fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                 }}
               >
-                Process Automation Technology Expertise
+                Data Security & Compliance Technology Expertise
               </h2>
             </motion.div>
 
             {/* Statistics Grid */}
             <div
-              className="process-automation-statistics-grid"
+              className="data-security-statistics-grid"
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(3, 1fr)',
@@ -487,7 +487,7 @@ export default function ProcessAutomationPage() {
             >
               {/* Stat 1 */}
               <motion.div
-                className="process-automation-stat-item"
+                className="data-security-stat-item"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -522,7 +522,7 @@ export default function ProcessAutomationPage() {
 
               {/* Stat 2 */}
               <motion.div
-                className="process-automation-stat-item"
+                className="data-security-stat-item"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -557,7 +557,7 @@ export default function ProcessAutomationPage() {
 
               {/* Stat 3 */}
               <motion.div
-                className="process-automation-stat-item"
+                className="data-security-stat-item"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -615,14 +615,14 @@ export default function ProcessAutomationPage() {
 
             {/* What we do Content Grid */}
             <div
-              className="process-automation-what-we-do-grid"
+              className="data-security-what-we-do-grid"
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(3, 1fr)',
                 gap: '3rem',
               }}
             >
-              {/* Research Column */}
+              {/* Security Audit Column */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -651,13 +651,8 @@ export default function ProcessAutomationPage() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                    <polyline points="14 2 14 8 20 8" />
-                    <line x1="16" y1="13" x2="8" y2="13" />
-                    <line x1="16" y1="17" x2="8" y2="17" />
-                    <polyline points="10 9 9 9 8 9" />
-                    <line x1="9" y1="5" x2="9" y2="21" />
-                    <line x1="12" y1="3" x2="12" y2="7" />
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <circle cx="12" cy="12" r="3" />
                   </svg>
                 </div>
                 <h4
@@ -669,7 +664,7 @@ export default function ProcessAutomationPage() {
                     fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                   }}
                 >
-                  Process Analysis
+                  Security Audit
                 </h4>
                 <p
                   style={{
@@ -679,11 +674,11 @@ export default function ProcessAutomationPage() {
                     fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                   }}
                 >
-                  We analyze your business processes to identify automation opportunities. Our thorough process mapping helps us understand workflows, bottlenecks, and inefficiencies, enabling us to design automation solutions that deliver maximum value and ROI.
+                  We conduct comprehensive security audits to identify vulnerabilities and risks in your systems. Our thorough assessments help you understand your security posture and implement necessary safeguards to protect your data and infrastructure.
                 </p>
               </motion.div>
 
-              {/* Automation Design Column */}
+              {/* Compliance Implementation Column */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -712,7 +707,11 @@ export default function ProcessAutomationPage() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <polyline points="10 9 9 9 8 9" />
                   </svg>
                 </div>
                 <h4
@@ -724,7 +723,7 @@ export default function ProcessAutomationPage() {
                     fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                   }}
                 >
-                  Automation Design
+                  Compliance Implementation
                 </h4>
                 <p
                   style={{
@@ -734,11 +733,11 @@ export default function ProcessAutomationPage() {
                     fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                   }}
                 >
-                  We design intelligent automation solutions using RPA, workflow automation, and integration technologies. Our automation designs eliminate manual tasks, reduce errors, and streamline operations, freeing your team to focus on strategic work.
+                  We help you implement and maintain compliance with GDPR, HIPAA, SOC 2, ISO 27001, and other regulatory standards. Our compliance frameworks ensure you meet industry requirements and avoid costly penalties.
                 </p>
               </motion.div>
 
-              {/* Process Optimization Column */}
+              {/* Ongoing Monitoring Column */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -767,7 +766,8 @@ export default function ProcessAutomationPage() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
                   </svg>
                 </div>
                 <h4
@@ -779,7 +779,7 @@ export default function ProcessAutomationPage() {
                     fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                   }}
                 >
-                  Process Optimization
+                  Ongoing Monitoring
                 </h4>
                 <p
                   style={{
@@ -789,7 +789,7 @@ export default function ProcessAutomationPage() {
                     fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                   }}
                 >
-                  We continuously monitor and optimize your automated processes to ensure peak performance. Our solutions adapt to changing business needs, improve efficiency over time, and provide measurable improvements in productivity and cost savings.
+                  We provide continuous security monitoring and compliance tracking to ensure your systems remain protected. Real-time alerts, automated scans, and regular assessments keep your security posture strong and your compliance status current.
                 </p>
               </motion.div>
             </div>
@@ -843,7 +843,7 @@ export default function ProcessAutomationPage() {
                   fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
                 }}
               >
-                Ready to Automate Your Processes?
+                Ready to Secure Your Data?
               </h2>
               <p
                 style={{
@@ -854,7 +854,7 @@ export default function ProcessAutomationPage() {
                   fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
                 }}
               >
-                Let's discuss how automation can transform your workflows and boost productivity.
+                Let's discuss how we can protect your sensitive information and ensure regulatory compliance.
               </p>
               <motion.a
                 href="/contact"
@@ -884,29 +884,29 @@ export default function ProcessAutomationPage() {
 
       <style jsx global>{`
         @media (max-width: 1024px) {
-          .process-automation-services-grid {
+          .data-security-services-grid {
             grid-template-columns: 1fr !important;
             gap: 4rem !important;
           }
         }
         
         @media (max-width: 768px) {
-          .process-automation-statistics-grid {
+          .data-security-statistics-grid {
             grid-template-columns: 1fr !important;
             gap: 2rem !important;
           }
           
-          .process-automation-stat-item {
+          .data-security-stat-item {
             border-right: none !important;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
             padding-bottom: 2rem !important;
           }
           
-          .process-automation-stat-item:last-child {
+          .data-security-stat-item:last-child {
             border-bottom: none !important;
           }
           
-          .process-automation-what-we-do-grid {
+          .data-security-what-we-do-grid {
             grid-template-columns: 1fr !important;
             gap: 3rem !important;
           }
@@ -915,3 +915,4 @@ export default function ProcessAutomationPage() {
     </>
   );
 }
+

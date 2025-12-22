@@ -15,6 +15,7 @@ const ChessFooter = () => {
         { label: 'DevOps & Cloud', url: '/services/devops-cloud-security' },
         { label: 'AI & Machine Learning', url: '/services/ai-machine-learning' },
         { label: 'Process Automation', url: '/services/process-automation' },
+        { label: 'Data Security & Compliance', url: '/services/data-security-compliance' },
       ]
     },
     {

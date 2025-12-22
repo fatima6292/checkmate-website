@@ -32,7 +32,7 @@ const navItems = [
       { label: 'Full-Stack Development', path: '/services/fullstack-development', icon: icons.Code },
       { label: 'Software Engineering', path: '/services/software-engineering', icon: icons.Server },
       { label: 'DevOps & Cloud Security', path: '/services/devops-cloud-security', icon: icons.Cloud },
-      { label: 'Data Security & Compliance', path: '/services/data-security', icon: icons.Shield },
+      { label: 'Data Security & Compliance', path: '/services/data-security-compliance', icon: icons.Shield },
       { label: 'AI & Machine Learning', path: '/services/ai-machine-learning', icon: icons.Brain },
       { label: 'Process Automation', path: '/services/process-automation', icon: icons.Zap },
     ],
