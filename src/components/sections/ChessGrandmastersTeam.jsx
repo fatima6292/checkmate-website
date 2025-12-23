@@ -361,47 +361,47 @@ const ChessGrandmastersTeam = ({ hideHeader = false }) => {
       }}>
         {/* Header */}
         {!hideHeader && (
-          <div className="team-header" style={{
-            textAlign: 'center',
-            marginBottom: isMobile ? '2rem' : isTablet ? '3rem' : '4rem',
-            padding: isMobile ? '0 0.5rem' : '0',
-          }}>
-            <motion.h6
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              style={{
-                fontSize: isMobile ? '0.75rem' : isTablet ? '0.875rem' : '1rem',
-                fontWeight: 700,
-                color: 'var(--color-primary)',
-                textTransform: 'uppercase',
-                letterSpacing: '2px',
-                marginBottom: isMobile ? '0.75rem' : '1rem',
-                fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
-                textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)',
-              }}
-            >
-              Our Team
-            </motion.h6>
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              style={{
-                fontSize: isMobile ? '2rem' : isTablet ? '2.75rem' : '3.75rem',
-                marginBottom: isMobile ? '1rem' : '1.5rem',
-                color: '#0F172A',
-                fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
-                fontWeight: 700,
-                lineHeight: 1.2,
-                textShadow: '0 2px 4px rgba(255, 255, 255, 0.5)',
-              }}
-            >
-              Meet our team
-            </motion.h1>
-          </div>
+        <div className="team-header" style={{
+          textAlign: 'center',
+          marginBottom: isMobile ? '2rem' : isTablet ? '3rem' : '4rem',
+          padding: isMobile ? '0 0.5rem' : '0',
+        }}>
+          <motion.h6
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{
+              fontSize: isMobile ? '0.75rem' : isTablet ? '0.875rem' : '1rem',
+              fontWeight: 700,
+              color: 'var(--color-primary)',
+              textTransform: 'uppercase',
+              letterSpacing: '2px',
+              marginBottom: isMobile ? '0.75rem' : '1rem',
+              fontFamily: "var(--font-syne), 'Syne', var(--font-bricolage), 'Bricolage Grotesque', sans-serif",
+              textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)',
+            }}
+          >
+            Our Team
+          </motion.h6>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            style={{
+              fontSize: isMobile ? '2rem' : isTablet ? '2.75rem' : '3.75rem',
+              marginBottom: isMobile ? '1rem' : '1.5rem',
+              color: '#0F172A',
+              fontFamily: "var(--font-sora), 'Sora', var(--font-dm-sans), 'DM Sans', sans-serif",
+              fontWeight: 700,
+              lineHeight: 1.2,
+              textShadow: '0 2px 4px rgba(255, 255, 255, 0.5)',
+            }}
+          >
+            Meet our team
+          </motion.h1>
+        </div>
         )}
 
         {isMobile ? (
